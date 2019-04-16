@@ -173,5 +173,5 @@ class BasePage(object):
             el.send_keys(Keys.TAB)
             logger.info("Press the TAB key!")
         except NameError as e:
-            logger.error("Failed to press the TAB key！")
+            logger.error("Failed to press the TAB key！err: %s" % e)
 
