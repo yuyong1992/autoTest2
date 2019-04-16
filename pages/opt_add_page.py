@@ -1,8 +1,8 @@
 # coding:utf-8
 
-from autoSinnetCloud.framework.logger import Logger
-from autoSinnetCloud.framework.base_page import BasePage
-from autoSinnetCloud.tools.models import excel_to_dic
+from autoTest2.framework.logger import Logger
+from autoTest2.framework.base_page import BasePage
+from autoTest2.tools.models import excel_to_dic
 
 logger = Logger("OptAdd").getlog()
 

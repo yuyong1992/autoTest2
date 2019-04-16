@@ -55,13 +55,15 @@ class BasePage(object):
         """
         在这里我们把file_path这个参数写死，直接保存到我们项目根目录的一个文件夹.\Screenshots下
         """
-        file_path = os.path.dirname(os.path.abspath('.')) + '/autoSinnetCloud/report/screenshots/'
+        file_path = os.path.dirname(
+            os.path.abspath('.')) + '/result/screenshots/'
         rq = time.strftime('%Y%m%d%H%M', time.localtime(time.time()))
         screen_name = file_path + rq + '.png'
         try:
             self.driver.get_screenshot_as_file(screen_name)
             # self.driver.save_screenshot(screen_name)
-            logger.info("Had take screenshot and save to folder : autoSinnetCloud/data/img/screenshots")
+            logger.info(
+                "Had take screenshot and save to folder : /result/screenshots")
         except NameError as e:
             logger.error("Failed to take screenshot! %s" % e)
             self.get_windows_img()
@@ -87,7 +89,8 @@ class BasePage(object):
             try:
                 element = self.driver.find_element_by_id(selector_value)
                 logger.info("Had find the element successful "
-                            "by %s via value: %s " % (selector_by, selector_value))
+                            "by %s via value: %s " %
+                            (selector_by, selector_value))
             except NoSuchElementException as e:
                 logger.error("NoSuchElementException: %s" % e)
                 self.get_windows_img()  # take screenshot
@@ -98,14 +101,16 @@ class BasePage(object):
         elif selector_by == "l" or selector_by == 'link_text':
             element = self.driver.find_element_by_link_text(selector_value)
         elif selector_by == "p" or selector_by == 'partial_link_text':
-            element = self.driver.find_element_by_partial_link_text(selector_value)
+            element = self.driver.find_element_by_partial_link_text(
+                selector_value)
         elif selector_by == "t" or selector_by == 'tag_name':
             element = self.driver.find_element_by_tag_name(selector_value)
         elif selector_by == "x" or selector_by == 'xpath':
             try:
                 element = self.driver.find_element_by_xpath(selector_value)
                 logger.info("Had find the element successful "
-                            "by %s via value: %s " % (selector_by, selector_value))
+                            "by %s via value: %s " %
+                            (selector_by, selector_value))
             except NoSuchElementException as e:
                 logger.error("NoSuchElementException: %s" % repr(e))
                 self.get_windows_img()
@@ -124,7 +129,8 @@ class BasePage(object):
         try:
             el.clear()
             el.send_keys(text)
-            logger.info("Had type \' %s \' in inputBox \' %s \'" % (text, input_name))
+            logger.info("Had type \' %s \' in inputBox \' %s \'" %
+                        (text, input_name))
         except NameError as e:
             logger.error("Failed to type in input box with %s" % e)
             self.get_windows_img()
@@ -174,4 +180,3 @@ class BasePage(object):
             logger.info("Press the TAB key!")
         except NameError as e:
             logger.error("Failed to press the TAB key！err: %s" % e)
-
