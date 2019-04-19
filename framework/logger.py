@@ -23,7 +23,7 @@ class Logger(object):
         rq = time.strftime('%Y%m%d%H%M', time.localtime(time.time()))
         # log_path = os.path.dirname(os.getcwd()) + '/Logs/'  # 项目根目录下/Logs保存日志
         log_path = os.path.dirname(os.path.abspath('.')) + \
-            '/autoTest/autoSinnetCloud/report/logs/'
+            '/autoTest2/logs/'
         # 如果case组织结构式 /testsuit/featuremodel/xxx.py ， 那么得到的相对路径的父路径就是项目根目录
         # log_path = 'F:\\Code\PyCharm\\autoTest\\autoSinnetCloud\\report\logs'
         log_name = log_path + rq + '.log'

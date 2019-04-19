@@ -1,7 +1,7 @@
 # coding:utf-8
 
-from autoSinnetCloud.framework.base_page import BasePage
-from autoSinnetCloud.framework.logger import Logger
+from framework.base_page import BasePage
+from framework.logger import Logger
 
 logger = Logger('LoginPage').getlog()
 
@@ -10,6 +10,7 @@ class LoginPage(BasePage):
     path_username = 'xpath=>//*[@id="app"]/div/div[3]/div/div[1]/form/div[1]/input'
     path_pwd = 'xpath=>//*[@id="app"]/div/div[3]/div/div[1]/form/div[2]/input'
     path_err = 'xpath=>/html/body/div[3]/p'
+    path_but = 'xpath=>//*[@id="app"]/div/div[3]/div/div[1]/form/div[4]'
 
     def type_username(self, username):
         self.type(self.path_username, username)
@@ -17,8 +18,8 @@ class LoginPage(BasePage):
     def type_pwd(self, pwd):
         self.type(self.path_pwd, pwd)
 
-    def click_but(self, but_name, path_but='xpath=>//*[@id="app"]/div/div[3]/div/div[1]/form/div[4]'):
-        self.click(path_but, but_name)
+    def click_but(self, but_name, path_button=path_but):
+        self.click(path_button, but_name)
 
     def get_err_msg(self):
         err_msg = self.find_element(self.path_err)

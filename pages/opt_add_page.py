@@ -1,8 +1,8 @@
 # coding:utf-8
 
-from autoTest2.framework.logger import Logger
-from autoTest2.framework.base_page import BasePage
-from autoTest2.tools.models import excel_to_dic
+from framework.logger import Logger
+from framework.base_page import BasePage
+from tools.models import excel_to_dic
 
 logger = Logger("OptAdd").getlog()
 
@@ -25,10 +25,10 @@ class OptAdd(BasePage):
         """选择客户行业"""
         self.click(self.opt_field_data[1]["field_path"], self.opt_field_data[1]["field_name"])
         self.sleep(0.1)
-        path = '/html/body/div[last()]/div[1]/div[1]/ul/li[' + index + ']'
+        # 下拉列表中选项的定位地址
         path_option = 'xpath=>/html/body/div[last()]/div[1]/div[1]/ul/li[' + index + ']'
-        self.driver.execute_script('arguments[0].scrollIntoView();',
-                                   self.driver.find_element_by_xpath(path))
+        # 将列表滚动到指定的列表选项的位置
+        self.driver.execute_script('arguments[0].scrollIntoView();', self.find_element(path_option))
         self.sleep(0.1)
         self.click(path_option, "选项 %s" % index)
         logger.info("%s 下拉框已选择第 %s 个选项！" % (self.opt_field_data[1]["field_name"], index))
@@ -37,10 +37,8 @@ class OptAdd(BasePage):
         """选择省"""
         self.click(self.opt_field_data[2]["field_path"], self.opt_field_data[2]["field_name"])
         self.sleep(0.1)
-        path = '/html/body/div[last()]/div[1]/div[1]/ul/li[' + index + ']'
         path_option = 'xpath=>/html/body/div[last()]/div[1]/div[1]/ul/li[' + index + ']'
-        self.driver.execute_script('arguments[0].scrollIntoView();',
-                                   self.driver.find_element_by_xpath(path))
+        self.driver.execute_script('arguments[0].scrollIntoView();', self.find_element(path_option))
         self.sleep(0.1)
         self.click(path_option, "选项 %s" % index)
         logger.info("%s 下拉框已选择第 %s 个选项！" % (self.opt_field_data[2]["field_name"], index))
@@ -49,10 +47,8 @@ class OptAdd(BasePage):
         """选择市"""
         self.click(self.opt_field_data[3]["field_path"], self.opt_field_data[3]["field_name"])
         self.sleep(0.1)
-        path = '/html/body/div[last()]/div[1]/div[1]/ul/li[' + index + ']'
         path_option = 'xpath=>/html/body/div[last()]/div[1]/div[1]/ul/li[' + index + ']'
-        self.driver.execute_script('arguments[0].scrollIntoView();',
-                                   self.driver.find_element_by_xpath(path))
+        self.driver.execute_script('arguments[0].scrollIntoView();', self.find_element(path_option))
         self.sleep(0.1)
         self.click(path_option, "选项 %s" % index)
         logger.info("%s 下拉框已选择第 %s 个选项！" % (self.opt_field_data[3]["field_name"], index))
@@ -86,10 +82,8 @@ class OptAdd(BasePage):
         """选择联系人性别"""
         self.click(self.opt_field_data[9]["field_path"], self.opt_field_data[9]["field_name"])
         self.sleep(0.1)
-        path = '/html/body/div[last()]/div[1]/div[1]/ul/li[' + index + ']'
         path_option = 'xpath=>/html/body/div[last()]/div[1]/div[1]/ul/li[' + index + ']'
-        self.driver.execute_script('arguments[0].scrollIntoView();',
-                                   self.driver.find_element_by_xpath(path))
+        self.driver.execute_script('arguments[0].scrollIntoView();', self.find_element(path_option))
         self.sleep(0.1)
         self.click(path_option, "选项 %s" % index)
         logger.info("%s 下拉框已选择第 %s 个选项！" % (self.opt_field_data[9]["field_name"], index))
@@ -108,10 +102,8 @@ class OptAdd(BasePage):
         """选择联系人状态"""
         self.click(self.opt_field_data[12]["field_path"], self.opt_field_data[12]["field_name"])
         self.sleep(0.1)
-        path = '/html/body/div[last()]/div[1]/div[1]/ul/li[' + index + ']'
         path_option = 'xpath=>/html/body/div[last()]/div[1]/div[1]/ul/li[' + index + ']'
-        self.driver.execute_script('arguments[0].scrollIntoView();',
-                                   self.driver.find_element_by_xpath(path))
+        self.driver.execute_script('arguments[0].scrollIntoView();', self.find_element(path_option))
         self.sleep(0.1)
         self.click(path_option, "选项 %s" % index)
         logger.info("%s 下拉框已选择第 %s 个选项！" % (self.opt_field_data[12]["field_name"], index))
@@ -147,10 +139,8 @@ class OptAdd(BasePage):
         """选择对光环云主要需求"""
         self.click(self.opt_field_data[18]["field_path"], self.opt_field_data[18]["field_name"])
         self.sleep(0.1)
-        path = '/html/body/div[last()]/div[1]/div[1]/ul/li[' + index + ']'
         path_option = 'xpath=>/html/body/div[last()]/div[1]/div[1]/ul/li[' + index + ']'
-        self.driver.execute_script('arguments[0].scrollIntoView();',
-                                   self.driver.find_element_by_xpath(path))
+        self.driver.execute_script('arguments[0].scrollIntoView();', self.find_element(path_option))
         self.click(path_option, "选项 %s" % index)
         logger.info("%s 下拉框已选择第 %s 个选项！" % (self.opt_field_data[18]["field_name"], index))
 
@@ -158,10 +148,8 @@ class OptAdd(BasePage):
         """选择竞争对手"""
         self.click(self.opt_field_data[19]["field_path"], self.opt_field_data[19]["field_name"])
         self.sleep(0.1)
-        path = '/html/body/div[last()]/div[1]/div[1]/ul/li[' + index + ']'
         path_option = 'xpath=>/html/body/div[last()]/div[1]/div[1]/ul/li[' + index + ']'
-        self.driver.execute_script('arguments[0].scrollIntoView();',
-                                   self.driver.find_element_by_xpath(path))
+        self.driver.execute_script('arguments[0].scrollIntoView();', self.find_element(path_option))
         self.click(path_option, "选项 %s" % index)
         logger.info("%s 下拉框已选择第 %s 个选项！" % (self.opt_field_data[19]["field_name"], index))
 
@@ -174,10 +162,9 @@ class OptAdd(BasePage):
         """选择应用场景"""
         self.click(self.opt_field_data[21]["field_path"], self.opt_field_data[21]["field_name"])
         self.sleep(0.1)
-        path = '/html/body/div[last()]/div[1]/div[1]/ul/li[' + index + ']'
         path_option = 'xpath=>/html/body/div[last()]/div[1]/div[1]/ul/li[' + index + ']'
         self.driver.execute_script('arguments[0].scrollIntoView();',
-                                   self.driver.find_element_by_xpath(path))
+                                   self.find_element(path_option))
         self.click(path_option, "选项 %s" % index)
         logger.info("%s 下拉框已选择第 %s 个选项！" % (self.opt_field_data[21]["field_name"], index))
 
@@ -195,9 +182,8 @@ class OptAdd(BasePage):
         """选择客户需求"""
         self.click(self.opt_field_data[24]["field_path"], self.opt_field_data[24]["field_name"])
         self.sleep(0.1)
-        path = '/html/body/div[last()]/div[1]/div[1]/ul/li[' + index + ']'
         path_option = 'xpath=>/html/body/div[last()]/div[1]/div[1]/ul/li[' + index + ']'
-        self.driver.execute_script('arguments[0].scrollIntoView();', self.driver.find_element_by_xpath(path))
+        self.driver.execute_script('arguments[0].scrollIntoView();', self.find_element(path_option))
         self.click(path_option, "选项 %s" % index)
         logger.info("%s 下拉框已选择第 %s 个选项！" % (self.opt_field_data[24]["field_name"], index))
 
@@ -209,3 +195,7 @@ class OptAdd(BasePage):
     def submit_data(self):
         """点击提交按钮"""
         self.click(self.opt_field_data[26]["field_path"], self.opt_field_data[26]["field_name"])
+
+    def back_to_lead_list(self):
+        """点击返回线索管理按钮"""
+        self.click(self.opt_field_data[27]["field_path"], self.opt_field_data[27]["field_name"])

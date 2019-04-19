@@ -10,8 +10,8 @@ logger = Logger(logger="BrowserEngine").getlog()
 
 class BrowserEngine(object):
     dir = os.path.dirname(os.path.abspath('.'))  # 注意相对路径获取方法
-    chrome_driver_path = dir + '/tools/chromedriver.exe'
-    ie_driver_path = dir + '/tools/IEDriverServer.exe'
+    chrome_driver_path = dir + '/autoTest2/tools/chromedriver.exe'
+    ie_driver_path = dir + 'autoTest2/tools/IEDriverServer.exe'
 
     def __init__(self, driver):
         self.driver = driver
@@ -20,9 +20,8 @@ class BrowserEngine(object):
 
     def open_browser(self, driver):
         config = ConfigParser()
-        # file_path = os.path.dirname(os.getcwd()) + '/config/config.ini'
         file_path = os.path.dirname(
-            os.path.abspath('.')) + '/config/config.ini'
+            os.path.abspath('.')) + '/autoTest2/config/config.ini'
         config.read(file_path)
         # logger.info(file_path)
 

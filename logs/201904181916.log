@@ -1,0 +1,79 @@
+2019-04-18 19:16:31,538 - BrowserEngine - INFO -             You had select Chrome browser.
+2019-04-18 19:16:31,538 - BrowserEngine - INFO -             The test server url is: http://172.16.0.96:8030
+2019-04-18 19:16:33,840 - BrowserEngine - INFO -             Starting Chrome browser.
+2019-04-18 19:16:35,554 - BrowserEngine - INFO -             Open url: http://172.16.0.96:8030
+2019-04-18 19:16:35,554 - BrowserEngine - INFO -             Maximize the current window.
+2019-04-18 19:16:35,555 - BrowserEngine - INFO -             Set implicitly wait 10 seconds.
+2019-04-18 19:16:35,569 - BasePage - INFO -             Had find the element successful by xpath via value: //*[@id="app"]/div/div[3]/div/div[1]/form/div[1]/input 
+2019-04-18 19:16:35,654 - BasePage - INFO -             Had type ' 18811133441 ' in inputBox ' inputBox '
+2019-04-18 19:16:35,665 - BasePage - INFO -             Had find the element successful by xpath via value: //*[@id="app"]/div/div[3]/div/div[1]/form/div[2]/input 
+2019-04-18 19:16:35,727 - BasePage - INFO -             Had type ' 1234qwer ' in inputBox ' inputBox '
+2019-04-18 19:16:35,738 - BasePage - INFO -             Had find the element successful by xpath via value: //*[@id="app"]/div/div[3]/div/div[1]/form/div[4] 
+2019-04-18 19:16:37,036 - BasePage - INFO -             The element ' 登录 ' was clicked.
+2019-04-18 19:16:37,537 - BasePage - INFO -             Sleep for 0 seconds
+2019-04-18 19:16:37,549 - BasePage - INFO -             Had find the element successful by xpath via value: /html/body/div[3]/div/div[2] 
+2019-04-18 19:16:37,586 - BasePage - INFO -             The element ' 上次登录提示框关闭按钮 ' was clicked.
+2019-04-18 19:16:37,597 - BasePage - INFO -             Had find the element successful by xpath via value: //*[@id="app"]/div[1]/div[1]/div[2]/div[1]/div/ul/div[2]/li/div 
+2019-04-18 19:16:37,663 - BasePage - INFO -             The element ' SPN ' was clicked.
+2019-04-18 19:16:38,164 - BasePage - INFO -             Sleep for 0 seconds
+2019-04-18 19:16:38,175 - BasePage - INFO -             Had find the element successful by xpath via value: //*[@id="app"]/div[1]/div[1]/div[2]/div[1]/div/ul/div[2]/li/ul/li[3]/a/span[2] 
+2019-04-18 19:16:38,232 - BasePage - INFO -             The element ' 线索管理 ' was clicked.
+2019-04-18 19:16:38,357 - BasePage - INFO -             Had find the element successful by xpath via value: //*[@id="app"]/div[1]/div[2]/div[2]/div[1]/div/div/div/div/div/div[1]/div[2]/a/button 
+2019-04-18 19:16:38,469 - BasePage - INFO -             The element ' 添加线索 ' was clicked.
+2019-04-18 19:16:38,469 - OptAddSuccess - INFO -             初始化完成！
+2019-04-18 19:16:38,470 - OptAdd - INFO -             正在输入' 客户名称 '
+2019-04-18 19:16:38,716 - BasePage - INFO -             Had find the element successful by xpath via value: //*[@id="app"]/div[1]/div[2]/div[2]/div[1]/div/div/div/div/div/div[2]/div[1]/form/div[1]/div[1]/div/div/div[1]/div[1]/input 
+2019-04-18 19:16:38,824 - BasePage - INFO -             Had type '   ' in inputBox ' 客户名称 '
+2019-04-18 19:16:38,835 - BasePage - INFO -             Had find the element successful by xpath via value: //*[@id="app"]/div[1]/div[2]/div[2]/div[1]/div/div/div/div/div/div[2]/div[1]/form/div[1]/div[1]/div/div/div[1]/div[1]/input 
+2019-04-18 19:16:38,900 - BasePage - INFO -             Press the TAB key!
+2019-04-18 19:16:39,900 - BasePage - INFO -             Sleep for 1 seconds
+2019-04-18 19:16:39,924 - BasePage - INFO -             Had find the element successful by xpath via value: //*[@id="app"]/div[1]/div[2]/div[2]/div[1]/div/div/div/div/div/div[2]/div[1]/form/div[1]/div[1]/div/div/div[2] 
+2019-04-18 19:16:39,938 - OptAddErrInTimeNull - INFO -             客户名称不能为空， 断言成功！
+2019-04-18 19:16:39,938 - OptAdd - INFO -             正在输入' 姓氏 '
+2019-04-18 19:16:39,949 - BasePage - INFO -             Had find the element successful by xpath via value: //*[@id="app"]/div[1]/div[2]/div[2]/div[1]/div/div/div/div/div/div[2]/div[2]/form/div/div[1]/div[1]/div[1]/div/div/div/div[1]/input 
+2019-04-18 19:16:39,995 - BasePage - INFO -             Had type '   ' in inputBox ' 姓氏 '
+2019-04-18 19:16:40,004 - BasePage - INFO -             Had find the element successful by xpath via value: //*[@id="app"]/div[1]/div[2]/div[2]/div[1]/div/div/div/div/div/div[2]/div[2]/form/div/div[1]/div[1]/div[1]/div/div/div/div[1]/input 
+2019-04-18 19:16:40,024 - BasePage - INFO -             Press the TAB key!
+2019-04-18 19:16:41,024 - BasePage - INFO -             Sleep for 1 seconds
+2019-04-18 19:16:41,036 - BasePage - INFO -             Had find the element successful by xpath via value: //*[@id="app"]/div[1]/div[2]/div[2]/div[1]/div/div/div/div/div/div[2]/div[2]/form/div/div[1]/div[1]/div[1]/div/div/div[2] 
+2019-04-18 19:16:41,049 - OptAddErrInTimeNull - INFO -             姓氏不能为空， 断言成功！
+2019-04-18 19:16:41,049 - OptAdd - INFO -             正在输入' 名字 '
+2019-04-18 19:16:41,062 - BasePage - INFO -             Had find the element successful by xpath via value: //*[@id="app"]/div[1]/div[2]/div[2]/div[1]/div/div/div/div/div/div[2]/div[2]/form/div/div[1]/div[1]/div[2]/div/div/div/div[1]/input 
+2019-04-18 19:16:41,104 - BasePage - INFO -             Had type '   ' in inputBox ' 名字 '
+2019-04-18 19:16:41,111 - BasePage - INFO -             Had find the element successful by xpath via value: //*[@id="app"]/div[1]/div[2]/div[2]/div[1]/div/div/div/div/div/div[2]/div[2]/form/div/div[1]/div[1]/div[2]/div/div/div/div[1]/input 
+2019-04-18 19:16:41,130 - BasePage - INFO -             Press the TAB key!
+2019-04-18 19:16:42,132 - BasePage - INFO -             Sleep for 1 seconds
+2019-04-18 19:16:42,155 - BasePage - INFO -             Had find the element successful by xpath via value: //*[@id="app"]/div[1]/div[2]/div[2]/div[1]/div/div/div/div/div/div[2]/div[2]/form/div/div[1]/div[1]/div[2]/div/div/div[2] 
+2019-04-18 19:16:42,168 - OptAddErrInTimeNull - INFO -             名字不能为空， 断言成功！
+2019-04-18 19:16:42,168 - OptAdd - INFO -             正在输入' 联系电话 '
+2019-04-18 19:16:42,180 - BasePage - INFO -             Had find the element successful by xpath via value: //*[@id="app"]/div[1]/div[2]/div[2]/div[1]/div/div/div/div/div/div[2]/div[2]/form/div/div[1]/div[3]/div/div/div/input 
+2019-04-18 19:16:42,238 - BasePage - INFO -             Had type '   ' in inputBox ' 联系电话 '
+2019-04-18 19:16:42,244 - BasePage - INFO -             Had find the element successful by xpath via value: //*[@id="app"]/div[1]/div[2]/div[2]/div[1]/div/div/div/div/div/div[2]/div[2]/form/div/div[1]/div[3]/div/div/div/input 
+2019-04-18 19:16:42,263 - BasePage - INFO -             Press the TAB key!
+2019-04-18 19:16:43,263 - BasePage - INFO -             Sleep for 1 seconds
+2019-04-18 19:16:43,289 - BasePage - INFO -             Had find the element successful by xpath via value: //*[@id="app"]/div[1]/div[2]/div[2]/div[1]/div/div/div/div/div/div[2]/div[2]/form/div/div[1]/div[3]/div/div/div[2] 
+2019-04-18 19:16:43,303 - OptAddErrInTimeNull - INFO -             联系电话不能为空， 断言成功！
+2019-04-18 19:16:43,303 - OptAdd - INFO -             正在输入' 联系人邮箱 '
+2019-04-18 19:16:43,314 - BasePage - INFO -             Had find the element successful by xpath via value: //*[@id="app"]/div[1]/div[2]/div[2]/div[1]/div/div/div/div/div/div[2]/div[2]/form/div/div[2]/div[1]/div/div/div/input 
+2019-04-18 19:16:43,355 - BasePage - INFO -             Had type '   ' in inputBox ' 联系人邮箱 '
+2019-04-18 19:16:43,363 - BasePage - INFO -             Had find the element successful by xpath via value: //*[@id="app"]/div[1]/div[2]/div[2]/div[1]/div/div/div/div/div/div[2]/div[2]/form/div/div[2]/div[1]/div/div/div/input 
+2019-04-18 19:16:43,383 - BasePage - INFO -             Press the TAB key!
+2019-04-18 19:16:44,383 - BasePage - INFO -             Sleep for 1 seconds
+2019-04-18 19:16:44,398 - BasePage - INFO -             Had find the element successful by xpath via value: //*[@id="app"]/div[1]/div[2]/div[2]/div[1]/div/div/div/div/div/div[2]/div[2]/form/div/div[2]/div[1]/div/div/div[2] 
+2019-04-18 19:16:44,412 - OptAddErrInTimeNull - INFO -             联系人邮箱不能为空， 断言成功！
+2019-04-18 19:16:46,537 - BrowserEngine - INFO -             You had select Chrome browser.
+2019-04-18 19:16:46,537 - BrowserEngine - INFO -             The test server url is: http://172.16.0.96:8030
+2019-04-18 19:16:48,925 - BrowserEngine - INFO -             Starting Chrome browser.
+2019-04-18 19:16:50,639 - BrowserEngine - INFO -             Open url: http://172.16.0.96:8030
+2019-04-18 19:16:50,639 - BrowserEngine - INFO -             Maximize the current window.
+2019-04-18 19:16:50,640 - BrowserEngine - INFO -             Set implicitly wait 10 seconds.
+2019-04-18 19:16:50,656 - BasePage - INFO -             Had find the element successful by xpath via value: //*[@id="app"]/div/div[3]/div/div[1]/form/div[1]/input 
+2019-04-18 19:16:50,745 - BasePage - INFO -             Had type ' 18811133441 ' in inputBox ' inputBox '
+2019-04-18 19:16:50,758 - BasePage - INFO -             Had find the element successful by xpath via value: //*[@id="app"]/div/div[3]/div/div[1]/form/div[2]/input 
+2019-04-18 19:16:50,824 - BasePage - INFO -             Had type ' 1234qwer ' in inputBox ' inputBox '
+2019-04-18 19:16:50,836 - BasePage - INFO -             Had find the element successful by xpath via value: //*[@id="app"]/div/div[3]/div/div[1]/form/div[4] 
+2019-04-18 19:16:52,059 - BasePage - INFO -             The element ' 登录 ' was clicked.
+2019-04-18 19:16:55,059 - BasePage - INFO -             Sleep for 3 seconds
+2019-04-18 19:16:55,559 - BasePage - INFO -             Sleep for 0 seconds
+2019-04-18 19:16:55,575 - BasePage - INFO -             Had find the element successful by xpath via value: /html/body/div[3]/div/div[2] 
+2019-04-18 19:16:55,611 - BasePage - INFO -             The element ' 上次登录提示框关闭按钮 ' was clicked.

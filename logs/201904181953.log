@@ -1,0 +1,19 @@
+2019-04-18 19:53:56,264 - BrowserEngine - INFO -             You had select Chrome browser.
+2019-04-18 19:53:56,264 - BrowserEngine - INFO -             The test server url is: http://172.16.0.96:8030
+2019-04-18 19:53:58,605 - BrowserEngine - INFO -             Starting Chrome browser.
+2019-04-18 19:54:00,281 - BrowserEngine - INFO -             Open url: http://172.16.0.96:8030
+2019-04-18 19:54:00,281 - BrowserEngine - INFO -             Maximize the current window.
+2019-04-18 19:54:00,282 - BrowserEngine - INFO -             Set implicitly wait 10 seconds.
+2019-04-18 19:54:00,299 - BasePage - INFO -             Had find the element successful by xpath via value: //*[@id="app"]/div/div[3]/div/div[1]/form/div[1]/input 
+2019-04-18 19:54:00,383 - BasePage - INFO -             Had type ' 18811133441 ' in inputBox ' inputBox '
+2019-04-18 19:54:00,395 - BasePage - INFO -             Had find the element successful by xpath via value: //*[@id="app"]/div/div[3]/div/div[1]/form/div[2]/input 
+2019-04-18 19:54:00,458 - BasePage - INFO -             Had type ' 1234qwer ' in inputBox ' inputBox '
+2019-04-18 19:54:00,468 - BasePage - INFO -             Had find the element successful by xpath via value: //*[@id="app"]/div/div[3]/div/div[1]/form/div[4] 
+2019-04-18 19:54:01,782 - BasePage - INFO -             The element ' 登录 ' was clicked.
+2019-04-18 19:54:04,783 - BasePage - INFO -             Sleep for 3 seconds
+2019-04-18 19:54:05,283 - BasePage - INFO -             Sleep for 0 seconds
+2019-04-18 19:54:05,296 - BasePage - INFO -             Had find the element successful by xpath via value: /html/body/div[3]/div/div[2] 
+2019-04-18 19:54:05,330 - BasePage - INFO -             The element ' 上次登录提示框关闭按钮 ' was clicked.
+2019-04-18 19:54:05,342 - BasePage - INFO -             Had find the element successful by xpath via value: //*[@id="app"]/div[1]/div[2]/div[2]/div[1]/div/div/div/div[1]/div[1]/div/ul/li[@class="aws_border"] 
+2019-04-18 19:54:05,393 - BasePage - INFO -             The element ' AWS卡片 ' was clicked.
+2019-04-18 19:54:05,393 - DashboardPage - INFO -             pass

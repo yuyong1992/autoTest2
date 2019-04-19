@@ -1,0 +1,6 @@
+2019-04-16 15:05:01,910 - BrowserEngine - INFO -             You had select Firefox browser.
+2019-04-16 15:05:01,910 - BrowserEngine - INFO -             The test server url is: http://172.16.0.96:8030
+2019-04-16 15:05:08,451 - BrowserEngine - INFO -             Starting firefox browser.
+2019-04-16 15:05:09,163 - BrowserEngine - INFO -             Open url: http://172.16.0.96:8030
+2019-04-16 15:05:09,163 - BrowserEngine - INFO -             Maximize the current window.
+2019-04-16 15:05:09,166 - BrowserEngine - INFO -             Set implicitly wait 10 seconds.

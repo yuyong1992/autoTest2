@@ -1,41 +1,41 @@
 # coding:utf-8
 
-from autoTest2.framework.logger import Logger
-from autoTest2.framework.base_page import BasePage
+from framework.logger import Logger
+from framework.base_page import BasePage
 
 logger = Logger("OptAdd").getlog()
 
 
 class SpnLeadAdd(BasePage):
-    path_customer_name = ''  # 客户名称输入框地址
-    path_customer_industry = ''  # 客户的行业下拉框地址
-    path_customer_province = ''  # 客户所在的省下拉框
-    path_customer_city = ''  # 客户所在的市下拉框
-    path_customer_website = ''  # 客户公司的网址
-    path_customer_zip = ''  # 客户所在地的邮编
-    path_customer_address = ''  # 客户公司的详细地址
-    path_contact_lastname = ''  # 客户联系人姓氏
-    path_contact_fistname = ''  # 客户联系人名字
-    path_contact_gender = ''  # 客户联系人性别
-    path_contact_phone = ''  # 客户联系人电话
-    path_contact_email = ''  # 客户联系人邮箱
-    path_contact_status = ''  # 客户联系人在职状态
-    path_contact_position = ''  # 客户联系人职位
-    path_opt_name = ''  # 商机名称
-    path_opt_start_date = ''  # 开始时间
-    path_opt_income_onetime = ''  # 一次性收入预估
-    path_opt_income_monthly = ''  # 月度收入预估
-    path_opt_apn_primary_need = ''  # 对光环云的主要需求
-    path_opt_competitor = ''  # 竞争对手
-    path_opt_competitor_other = ''  # 竞争对手-其他
-    path_opt_application = ''  # 应用场景
-    path_opt_technology_need = ''  # 技术需求
-    path_opt_pain_spot = ''  # 客户痛点
-    path_opt_customer_need = ''  # 客户需求
-    path_opt_customer_need_other = ''  # 客户需求-其他
-    path_button_submit = ''  # 提交按钮
+    path_customer_name = 'xpath=>//*[@id="app"]/div[1]/div[2]/div/div[2]/div[1]/form/div[1]/div[1]/div/div/div/div[1]/input'  # 客户名称输入框地址
+    path_customer_industry = 'xpath=>//*[@id="app"]/div[1]/div[2]/div/div[2]/div[1]/form/div[1]/div[2]/div/div/div/div[1]/input'  # 客户的行业下拉框地址
+    path_customer_province = 'xpath=>//*[@id="app"]/div[1]/div[2]/div/div[2]/div[1]/form/div[1]/div[3]/div/div/div[2]/div/div/div[1]/input'  # 客户所在的省下拉框
+    path_customer_city = 'xpath=>//*[@id="app"]/div[1]/div[2]/div/div[2]/div[1]/form/div[1]/div[3]/div/div/div[3]/div/div/div[1]/input'  # 客户所在的市下拉框
+    path_customer_website = 'xpath=>//*[@id="app"]/div[1]/div[2]/div/div[2]/div[1]/form/div[2]/div[1]/div[1]/div/div/div/input'  # 客户公司的网址
+    path_customer_zip = 'xpath=>//*[@id="app"]/div[1]/div[2]/div/div[2]/div[1]/form/div[2]/div[1]/div[2]/div[1]/div/div/div/input'  # 客户所在地的邮编
+    path_customer_address = 'xpath=>//*[@id="app"]/div[1]/div[2]/div/div[2]/div[1]/form/div[2]/div[2]/div/div/div/textarea'  # 客户公司的详细地址
+    path_contact_lastname = 'xpath=>//*[@id="app"]/div[1]/div[2]/div/div[2]/div[2]/form/div/div[1]/div[1]/div[1]/div/div/div/div[1]/input'  # 客户联系人姓氏
+    path_contact_fistname = 'xpath=>//*[@id="app"]/div[1]/div[2]/div/div[2]/div[2]/form/div/div[1]/div[1]/div[2]/div/div/div/div[1]/input'  # 客户联系人名字
+    path_contact_gender = 'xpath=>//*[@id="app"]/div[1]/div[2]/div/div[2]/div[2]/form/div/div[1]/div[2]/div/div/div/div[1]/input'  # 客户联系人性别
+    path_contact_phone = 'xpath=>//*[@id="app"]/div[1]/div[2]/div/div[2]/div[2]/form/div/div[1]/div[3]/div/div/div/input'  # 客户联系人电话
+    path_contact_email = 'xpath=>//*[@id="app"]/div[1]/div[2]/div/div[2]/div[2]/form/div/div[2]/div[1]/div/div/div/input'  # 客户联系人邮箱
+    path_contact_status = 'xpath=>//*[@id="app"]/div[1]/div[2]/div/div[2]/div[2]/form/div/div[2]/div[2]/div/div/div/div[1]/input'  # 客户联系人在职状态
+    path_contact_position = 'xpath=>//*[@id="app"]/div[1]/div[2]/div/div[2]/div[2]/form/div/div[2]/div[3]/div/div/div/input'  # 客户联系人职位
+    path_opt_name = 'xpath=>//*[@id="app"]/div[1]/div[2]/div/div[2]/div[3]/form/div/div[1]/div/div/div/input'  # 商机名称
+    path_opt_start_date = 'xpath=>//*[@id="app"]/div[1]/div[2]/div/div[2]/div[3]/form/div/div[2]/div/div/div/input'  # 开始时间
+    path_opt_income_onetime = 'xpath=>//*[@id="app"]/div[1]/div[2]/div/div[2]/div[3]/form/div/div[3]/div/div/div/input'  # 一次性收入预估
+    path_opt_income_monthly = 'xpath=>//*[@id="app"]/div[1]/div[2]/div/div[2]/div[3]/form/div/div[4]/div/div/div/input'  # 月度收入预估
+    path_opt_apn_primary_need = 'xpath=>//*[@id="app"]/div[1]/div[2]/div/div[2]/div[3]/form/div/div[5]/div/div/div/div[1]/input'  # 对光环云的主要需求
+    path_opt_competitor = 'xpath=>//*[@id="app"]/div[1]/div[2]/div/div[2]/div[3]/form/div/div[6]/div/div/div/div/div/div[1]/input'  # 竞争对手
+    path_opt_competitor_other = 'xpath=>//*[@id="app"]/div[1]/div[2]/div/div[2]/div[3]/form/div/div[6]/div/div/div[2]/div/div/input'  # 竞争对手-其他
+    path_opt_application = 'xpath=>//*[@id="app"]/div[1]/div[2]/div/div[2]/div[3]/form/div/div[7]/div/div/div/div[1]/input'  # 应用场景
+    path_opt_technology_need = 'xpath=>//*[@id="app"]/div[1]/div[2]/div/div[2]/div[3]/form/div/div[8]/div/div/div/input'  # 技术需求
+    path_opt_pain_spot = 'xpath=>//*[@id="app"]/div[1]/div[2]/div/div[2]/div[3]/form/div/div[9]/div/div/div/input'  # 客户痛点
+    path_opt_customer_need = 'xpath=>//*[@id="app"]/div[1]/div[2]/div/div[2]/div[3]/form/div/div[10]/div/div/div[1]/div[2]/div/div/div[2]/span/span/i'  # 客户需求
+    path_opt_customer_need_other = 'xpath=>//*[@id="app"]/div[1]/div[2]/div/div[2]/div[3]/form/div/div[10]/div/div/div[2]/div/div/div/input'  # 客户需求-其他
+    path_button_submit = 'xpath=>//*[@id="app"]/div[1]/div[2]/div/div[2]/div[4]/button[1]'  # 提交按钮
+    path_button_back = ''   # 返回按钮
     
-
     def submit(self, path_button_submit, button_name='保存'):
         self.click(self.path_button_submit, button_name)
         logger.info("点击 保存 按钮")

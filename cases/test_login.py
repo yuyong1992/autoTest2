@@ -2,10 +2,10 @@
 
 import unittest
 import ddt
-from autoSinnetCloud.pages.login_page import LoginPage
-from autoSinnetCloud.framework.browser_engine import BrowserEngine
-from autoSinnetCloud.framework.logger import Logger
-from autoSinnetCloud.tools.models import excel_to_dic
+from pages.login_page import LoginPage
+from framework.browser_engine import BrowserEngine
+from framework.logger import Logger
+from tools.models import excel_to_dic
 
 logger1 = Logger("LoginSuccess").getlog()
 logger2 = Logger("LoginErrPhone").getlog()

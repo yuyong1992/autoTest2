@@ -1,0 +1,47 @@
+2019-04-18 18:36:23,875 - BrowserEngine - INFO -             You had select Chrome browser.
+2019-04-18 18:36:23,875 - BrowserEngine - INFO -             The test server url is: http://172.16.0.96:8030
+2019-04-18 18:36:26,137 - BrowserEngine - INFO -             Starting Chrome browser.
+2019-04-18 18:36:27,816 - BrowserEngine - INFO -             Open url: http://172.16.0.96:8030
+2019-04-18 18:36:27,816 - BrowserEngine - INFO -             Maximize the current window.
+2019-04-18 18:36:27,817 - BrowserEngine - INFO -             Set implicitly wait 10 seconds.
+2019-04-18 18:36:27,833 - BasePage - INFO -             Had find the element successful by xpath via value: //*[@id="app"]/div/div[3]/div/div[1]/form/div[1]/input 
+2019-04-18 18:36:27,921 - BasePage - INFO -             Had type ' 18811133441 ' in inputBox ' inputBox '
+2019-04-18 18:36:27,933 - BasePage - INFO -             Had find the element successful by xpath via value: //*[@id="app"]/div/div[3]/div/div[1]/form/div[2]/input 
+2019-04-18 18:36:28,002 - BasePage - INFO -             Had type ' 1234qwer ' in inputBox ' inputBox '
+2019-04-18 18:36:28,012 - BasePage - INFO -             Had find the element successful by xpath via value: //*[@id="app"]/div/div[3]/div/div[1]/form/div[4] 
+2019-04-18 18:36:29,094 - BasePage - INFO -             The element ' 登录 ' was clicked.
+2019-04-18 18:36:30,095 - BasePage - INFO -             Sleep for 1 seconds
+2019-04-18 18:36:30,106 - BasePage - INFO -             Had find the element successful by xpath via value: /html/body/div[3]/div/div[2] 
+2019-04-18 18:36:30,143 - BasePage - INFO -             The element ' 上次登录提示框关闭按钮 ' was clicked.
+2019-04-18 18:36:30,155 - BasePage - INFO -             Had find the element successful by xpath via value: //*[@id="app"]/div[1]/div[1]/div[2]/div[1]/div/ul/div[2]/li/div 
+2019-04-18 18:36:30,208 - BasePage - INFO -             The element ' 按钮 ' was clicked.
+2019-04-18 18:36:30,221 - BasePage - INFO -             Had find the element successful by xpath via value: //*[@id="app"]/div[1]/div[1]/div[2]/div[1]/div/ul/div[2]/li/ul/li[3]/a 
+2019-04-18 18:36:30,241 - BasePage - ERROR -             Failed to click the element with Message: element not visible
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.17134 x86_64)
+
+2019-04-18 18:36:40,258 - BasePage - ERROR -             NoSuchElementException: NoSuchElementException('no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="app"]/div[1]/div[2]/div[2]/div[1]/div/div/div/div/div/div[1]/div[2]/a/button"}\n  (Session info: chrome=71.0.3578.98)\n  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.17134 x86_64)', None, None)
+2019-04-18 18:36:40,569 - BasePage - INFO -             Had take screenshot and save to folder : /result/screenshots
+2019-04-18 18:36:40,569 - BasePage - ERROR -             Failed to click the element with 'str' object has no attribute 'click'
+2019-04-18 18:36:40,569 - OptAddSuccess - INFO -             初始化完成！
+2019-04-18 18:36:40,569 - OptAdd - INFO -             正在输入' 客户名称 '
+2019-04-18 18:36:50,606 - BasePage - ERROR -             NoSuchElementException: NoSuchElementException('no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="app"]/div[1]/div[2]/div/div[2]/div[1]/form/div[1]/div[1]/div/div/div/div[1]/input"}\n  (Session info: chrome=71.0.3578.98)\n  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.17134 x86_64)', None, None)
+2019-04-18 18:36:50,928 - BasePage - INFO -             Had take screenshot and save to folder : /result/screenshots
+2019-04-18 18:36:50,928 - BasePage - ERROR -             Failed to type in input box with AttributeError("'str' object has no attribute 'clear'",)
+2019-04-18 18:37:00,947 - BasePage - ERROR -             NoSuchElementException: NoSuchElementException('no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="app"]/div[1]/div[2]/div/div[2]/div[1]/form/div[1]/div[1]/div/div/div/div[1]/input"}\n  (Session info: chrome=71.0.3578.98)\n  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.17134 x86_64)', None, None)
+2019-04-18 18:37:01,348 - BasePage - INFO -             Had take screenshot and save to folder : /result/screenshots
+2019-04-18 18:37:03,467 - BrowserEngine - INFO -             You had select Chrome browser.
+2019-04-18 18:37:03,467 - BrowserEngine - INFO -             The test server url is: http://172.16.0.96:8030
+2019-04-18 18:37:05,772 - BrowserEngine - INFO -             Starting Chrome browser.
+2019-04-18 18:37:07,462 - BrowserEngine - INFO -             Open url: http://172.16.0.96:8030
+2019-04-18 18:37:07,462 - BrowserEngine - INFO -             Maximize the current window.
+2019-04-18 18:37:07,463 - BrowserEngine - INFO -             Set implicitly wait 10 seconds.
+2019-04-18 18:37:07,478 - BasePage - INFO -             Had find the element successful by xpath via value: //*[@id="app"]/div/div[3]/div/div[1]/form/div[1]/input 
+2019-04-18 18:37:07,571 - BasePage - INFO -             Had type ' 18811133441 ' in inputBox ' inputBox '
+2019-04-18 18:37:07,587 - BasePage - INFO -             Had find the element successful by xpath via value: //*[@id="app"]/div/div[3]/div/div[1]/form/div[2]/input 
+2019-04-18 18:37:07,654 - BasePage - INFO -             Had type ' 1234qwer ' in inputBox ' inputBox '
+2019-04-18 18:37:07,666 - BasePage - INFO -             Had find the element successful by xpath via value: //*[@id="app"]/div/div[3]/div/div[1]/form/div[4] 
+2019-04-18 18:37:08,742 - BasePage - INFO -             The element ' 登录 ' was clicked.
+2019-04-18 18:37:11,743 - BasePage - INFO -             Sleep for 3 seconds
+2019-04-18 18:37:11,756 - BasePage - INFO -             Had find the element successful by xpath via value: /html/body/div[3]/div/div[2] 
+2019-04-18 18:37:11,794 - BasePage - INFO -             The element ' 上次登录提示框关闭按钮 ' was clicked.

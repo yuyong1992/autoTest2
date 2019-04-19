@@ -1,0 +1,47 @@
+2019-04-18 18:44:47,149 - BrowserEngine - INFO -             You had select Chrome browser.
+2019-04-18 18:44:47,149 - BrowserEngine - INFO -             The test server url is: http://172.16.0.96:8030
+2019-04-18 18:44:49,465 - BrowserEngine - INFO -             Starting Chrome browser.
+2019-04-18 18:44:51,166 - BrowserEngine - INFO -             Open url: http://172.16.0.96:8030
+2019-04-18 18:44:51,166 - BrowserEngine - INFO -             Maximize the current window.
+2019-04-18 18:44:51,167 - BrowserEngine - INFO -             Set implicitly wait 10 seconds.
+2019-04-18 18:44:51,184 - BasePage - INFO -             Had find the element successful by xpath via value: //*[@id="app"]/div/div[3]/div/div[1]/form/div[1]/input 
+2019-04-18 18:44:51,273 - BasePage - INFO -             Had type ' 18811133441 ' in inputBox ' inputBox '
+2019-04-18 18:44:51,287 - BasePage - INFO -             Had find the element successful by xpath via value: //*[@id="app"]/div/div[3]/div/div[1]/form/div[2]/input 
+2019-04-18 18:44:51,354 - BasePage - INFO -             Had type ' 1234qwer ' in inputBox ' inputBox '
+2019-04-18 18:44:51,367 - BasePage - INFO -             Had find the element successful by xpath via value: //*[@id="app"]/div/div[3]/div/div[1]/form/div[4] 
+2019-04-18 18:44:52,444 - BasePage - INFO -             The element ' 登录 ' was clicked.
+2019-04-18 18:44:52,546 - BasePage - INFO -             Sleep for 0 seconds
+2019-04-18 18:44:52,602 - BasePage - INFO -             Had find the element successful by xpath via value: /html/body/div[3]/div/div[2] 
+2019-04-18 18:44:52,620 - BasePage - ERROR -             Failed to click the element with Message: element not visible
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.17134 x86_64)
+
+2019-04-18 18:44:52,632 - BasePage - INFO -             Had find the element successful by xpath via value: //*[@id="app"]/div[1]/div[1]/div[2]/div[1]/div/ul/div[2]/li/div 
+2019-04-18 18:44:52,707 - BasePage - INFO -             The element ' SPN ' was clicked.
+2019-04-18 18:44:52,721 - BasePage - INFO -             Had find the element successful by xpath via value: //*[@id="app"]/div[1]/div[1]/div[2]/div[1]/div/ul/div[2]/li/ul/li[3]/a/span[2] 
+2019-04-18 18:44:52,736 - BasePage - ERROR -             Failed to click the element with Message: element not visible
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.17134 x86_64)
+
+2019-04-18 18:45:02,775 - BasePage - ERROR -             NoSuchElementException: NoSuchElementException('no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="app"]/div[1]/div[2]/div[2]/div[1]/div/div/div/div/div/div[1]/div[2]/a/button"}\n  (Session info: chrome=71.0.3578.98)\n  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.17134 x86_64)', None, None)
+2019-04-18 18:45:03,108 - BasePage - INFO -             Had take screenshot and save to folder : /result/screenshots
+2019-04-18 18:45:03,108 - BasePage - ERROR -             Failed to click the element with 'str' object has no attribute 'click'
+2019-04-18 18:45:03,108 - OptAddSuccess - INFO -             初始化完成！
+2019-04-18 18:45:03,108 - OptAdd - INFO -             正在输入' 客户名称 '
+2019-04-18 18:45:13,147 - BasePage - ERROR -             NoSuchElementException: NoSuchElementException('no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="app"]/div[1]/div[2]/div/div[2]/div[1]/form/div[1]/div[1]/div/div/div/div[1]/input"}\n  (Session info: chrome=71.0.3578.98)\n  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.17134 x86_64)', None, None)
+2019-04-18 18:45:13,484 - BasePage - INFO -             Had take screenshot and save to folder : /result/screenshots
+2019-04-18 18:45:13,484 - BasePage - ERROR -             Failed to type in input box with AttributeError("'str' object has no attribute 'clear'",)
+2019-04-18 18:45:23,534 - BasePage - ERROR -             NoSuchElementException: NoSuchElementException('no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="app"]/div[1]/div[2]/div/div[2]/div[1]/form/div[1]/div[1]/div/div/div/div[1]/input"}\n  (Session info: chrome=71.0.3578.98)\n  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.17134 x86_64)', None, None)
+2019-04-18 18:45:23,857 - BasePage - INFO -             Had take screenshot and save to folder : /result/screenshots
+2019-04-18 18:45:25,970 - BrowserEngine - INFO -             You had select Chrome browser.
+2019-04-18 18:45:25,970 - BrowserEngine - INFO -             The test server url is: http://172.16.0.96:8030
+2019-04-18 18:45:28,289 - BrowserEngine - INFO -             Starting Chrome browser.
+2019-04-18 18:45:29,974 - BrowserEngine - INFO -             Open url: http://172.16.0.96:8030
+2019-04-18 18:45:29,974 - BrowserEngine - INFO -             Maximize the current window.
+2019-04-18 18:45:29,975 - BrowserEngine - INFO -             Set implicitly wait 10 seconds.
+2019-04-18 18:45:29,989 - BasePage - INFO -             Had find the element successful by xpath via value: //*[@id="app"]/div/div[3]/div/div[1]/form/div[1]/input 
+2019-04-18 18:45:30,086 - BasePage - INFO -             Had type ' 18811133441 ' in inputBox ' inputBox '
+2019-04-18 18:45:30,101 - BasePage - INFO -             Had find the element successful by xpath via value: //*[@id="app"]/div/div[3]/div/div[1]/form/div[2]/input 
+2019-04-18 18:45:30,172 - BasePage - INFO -             Had type ' 1234qwer ' in inputBox ' inputBox '
+2019-04-18 18:45:30,184 - BasePage - INFO -             Had find the element successful by xpath via value: //*[@id="app"]/div/div[3]/div/div[1]/form/div[4] 
+2019-04-18 18:45:30,446 - BasePage - INFO -             The element ' 登录 ' was clicked.

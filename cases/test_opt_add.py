@@ -2,10 +2,12 @@
 
 import unittest
 import ddt
-from autoSinnetCloud.framework.logger import Logger
-from autoSinnetCloud.framework.browser_engine import BrowserEngine
-from autoSinnetCloud.pages.opt_add_page import OptAdd
-from autoSinnetCloud.tools.models import excel_to_dic
+from framework.logger import Logger
+from framework.browser_engine import BrowserEngine
+from pages.opt_add_page import OptAdd
+from pages.login_page import LoginPage
+from pages.dashboard_page import DashBoardPage
+from tools.models import excel_to_dic
 
 logger = Logger("OptAddSuccess").getlog()
 logger2 = Logger("OptAddErrSub").getlog()
@@ -41,16 +43,20 @@ class OptAddSuccess(unittest.TestCase):
         self.driver = browser.open_browser(self)
         self.driver.implicitly_wait(10)
         try:
-            self.driver.find_element_by_xpath('//*[@id="app"]/div/div[3]/div/div[1]/form/div[1]/input').clear()
-            self.driver.find_element_by_xpath('//*[@id="app"]/div/div[3]/div/div[1]/form/div[1]/input').send_keys(
-                "18811133441")
-            self.driver.find_element_by_xpath('//*[@id="app"]/div/div[3]/div/div[1]/form/div[2]/input').clear()
-            self.driver.find_element_by_xpath('//*[@id="app"]/div/div[3]/div/div[1]/form/div[2]/input').send_keys(
-                "1234qwer")
-            self.driver.find_element_by_xpath('//*[@id="app"]/div/div[3]/div/div[1]/form/div[4]').click()
-            self.driver.find_element_by_xpath('//*[@id="app"]/header/div/div[1]/div[2]/ul/li[2]/a').click()
-            self.driver.find_element_by_xpath('//*[@id="app"]/div[1]/div[1]/div/div/ul/li[3]/a').click()
-            self.driver.find_element_by_xpath('//*[@id="app"]/div[1]/div[2]/div/div[1]/div[2]/a/button').click()
+            # SPN登录
+            loginpage = LoginPage(cls.driver)
+            loginpage.type_username('18811133441')
+            loginpage.type_pwd('1234qwer')
+            loginpage.click_but('登录')
+
+            # 进入添加lead的页面
+            dashpage = DashBoardPage(cls.driver)
+            # dashpage.sleep(1)
+            dashpage.close_tip_last_login()
+            dashpage.click('xpath=>//*[@id="app"]/div[1]/div[1]/div[2]/div[1]/div/ul/div[2]/li/div', 'SPN')
+            dashpage.sleep(0.5)
+            dashpage.click('xpath=>//*[@id="app"]/div[1]/div[1]/div[2]/div[1]/div/ul/div[2]/li/ul/li[3]/a/span[2]', '线索管理')
+            dashpage.click('xpath=>//*[@id="app"]/div[1]/div[2]/div[2]/div[1]/div/div/div/div/div/div[1]/div[2]/a/button', '添加线索')
             logger.info("初始化完成！")
         except Exception as e:
             logger.error("初始化失败！err：%s" % e)
@@ -62,7 +68,7 @@ class OptAddSuccess(unittest.TestCase):
 
     @ddt.data(*field_value_data)
     def test_1_opt_add_success(self, data):
-        """商机添加成功"""
+        """线索添加成功"""
         addpage = OptAdd(self.driver)
         # 输入客户名称
         if data["客户名称"] != '':
@@ -147,11 +153,11 @@ class OptAddSuccess(unittest.TestCase):
         addpage.sleep(0.5)
         try:
             self.assertEqual("保存成功！", addpage.find_element('xpath=>/html/body/div[3]/div/div[1]/p').text)
-            logger.info("商机添加成功！")
-            print("%s 商机添加成功！" % data["用例名称"])
+            logger.info("线索添加成功！")
+            print("%s 线索添加成功！" % data["用例名称"])
         except (AssertionError, AttributeError) as e:
-            logger.error("商机添加失败！err：%s" % e)
-            print("商机添加失败！%s err：%s" % (data["用例名称"], e))
+            logger.error("线索添加失败！err：%s" % e)
+            print("线索添加失败！%s err：%s" % (data["用例名称"], e))
             raise AssertionError
 
 
@@ -162,17 +168,23 @@ class OptAddErrSub(unittest.TestCase):
         self.driver = browser.open_browser(self)
         self.driver.implicitly_wait(10)
         try:
-            self.driver.find_element_by_xpath('//*[@id="app"]/div/div[3]/div/div[1]/form/div[1]/input').clear()
-            self.driver.find_element_by_xpath('//*[@id="app"]/div/div[3]/div/div[1]/form/div[1]/input').send_keys("18811133441")
-            self.driver.find_element_by_xpath('//*[@id="app"]/div/div[3]/div/div[1]/form/div[2]/input').clear()
-            self.driver.find_element_by_xpath('//*[@id="app"]/div/div[3]/div/div[1]/form/div[2]/input').send_keys("1234qwer")
-            self.driver.find_element_by_xpath('//*[@id="app"]/div/div[3]/div/div[1]/form/div[4]').click()
-            self.driver.find_element_by_xpath('//*[@id="app"]/header/div/div[1]/div[2]/ul/li[2]/a').click()
-            self.driver.find_element_by_xpath('//*[@id="app"]/div[1]/div[1]/div/div/ul/li[3]/a').click()
-            self.driver.find_element_by_xpath('//*[@id="app"]/div[1]/div[2]/div/div[1]/div[2]/a/button').click()
-            logger2.info("初始化完成！")
+            # SPN登录
+            loginpage = LoginPage(cls.driver)
+            loginpage.type_username('18811133441')
+            loginpage.type_pwd('1234qwer')
+            loginpage.click_but('登录')
+
+            # 进入添加lead的页面
+            dashpage = DashBoardPage(cls.driver)
+            # dashpage.sleep(1)
+            dashpage.close_tip_last_login()
+            dashpage.click('xpath=>//*[@id="app"]/div[1]/div[1]/div[2]/div[1]/div/ul/div[2]/li/div', 'SPN')
+            dashpage.sleep(0.5)
+            dashpage.click('xpath=>//*[@id="app"]/div[1]/div[1]/div[2]/div[1]/div/ul/div[2]/li/ul/li[3]/a/span[2]', '线索管理')
+            dashpage.click('xpath=>//*[@id="app"]/div[1]/div[2]/div[2]/div[1]/div/div/div/div/div/div[1]/div[2]/a/button', '添加线索')
+            logger.info("初始化完成！")
         except Exception as e:
-            logger2.error("初始化失败！err：%s" % e)
+            logger.error("初始化失败！err：%s" % e)
             print("初始化失败！err：%s" % e)
             raise AssertionError
 
@@ -181,7 +193,7 @@ class OptAddErrSub(unittest.TestCase):
 
     @ddt.data(*field_value_err_data)
     def test_2_opt_add_err(self, data):
-        """商机添加失败-点击提交后校验"""
+        """线索添加失败-点击提交后校验"""
 
         addpage = OptAdd(self.driver)
         # 输入客户名称
@@ -278,25 +290,30 @@ class OptAddErrSub(unittest.TestCase):
 @ddt.ddt
 class OptAddErrInTime(unittest.TestCase):
     """字段规则校验-失焦后立即校验"""
+
     @classmethod
     def setUpClass(cls):
         browser = BrowserEngine(cls)
         cls.driver = browser.open_browser(cls)
         cls.driver.implicitly_wait(10)
         try:
-            cls.driver.find_element_by_xpath('//*[@id="app"]/div/div[3]/div/div[1]/form/div[1]/input').clear()
-            cls.driver.find_element_by_xpath('//*[@id="app"]/div/div[3]/div/div[1]/form/div[1]/input').send_keys(
-                "18811133441")
-            cls.driver.find_element_by_xpath('//*[@id="app"]/div/div[3]/div/div[1]/form/div[2]/input').clear()
-            cls.driver.find_element_by_xpath('//*[@id="app"]/div/div[3]/div/div[1]/form/div[2]/input').send_keys(
-                "1234qwer")
-            cls.driver.find_element_by_xpath('//*[@id="app"]/div/div[3]/div/div[1]/form/div[4]').click()
-            cls.driver.find_element_by_xpath('//*[@id="app"]/header/div/div[1]/div[2]/ul/li[2]/a').click()
-            cls.driver.find_element_by_xpath('//*[@id="app"]/div[1]/div[1]/div/div/ul/li[3]/a').click()
-            cls.driver.find_element_by_xpath('//*[@id="app"]/div[1]/div[2]/div/div[1]/div[2]/a/button').click()
-            logger3.info("初始化完成！")
+            # SPN登录
+            loginpage = LoginPage(cls.driver)
+            loginpage.type_username('18811133441')
+            loginpage.type_pwd('1234qwer')
+            loginpage.click_but('登录')
+
+            # 进入添加lead的页面
+            dashpage = DashBoardPage(cls.driver)
+            # dashpage.sleep(1)
+            dashpage.close_tip_last_login()
+            dashpage.click('xpath=>//*[@id="app"]/div[1]/div[1]/div[2]/div[1]/div/ul/div[2]/li/div', 'SPN')
+            dashpage.sleep(0.5)
+            dashpage.click('xpath=>//*[@id="app"]/div[1]/div[1]/div[2]/div[1]/div/ul/div[2]/li/ul/li[3]/a/span[2]', '线索管理')
+            dashpage.click('xpath=>//*[@id="app"]/div[1]/div[2]/div[2]/div[1]/div/div/div/div/div/div[1]/div[2]/a/button', '添加线索')
+            logger.info("初始化完成！")
         except Exception as e:
-            logger3.error("初始化失败！err：%s" % e)
+            logger.error("初始化失败！err：%s" % e)
             print("初始化失败！err：%s" % e)
             raise AssertionError
 
@@ -306,7 +323,7 @@ class OptAddErrInTime(unittest.TestCase):
 
     @ddt.data(*field_value_err_intime_data)
     def test_3_opt_add_err_intime(self, data):
-        """商机添加失败-失焦后立即校验"""
+        """线索添加失败-失焦后立即校验"""
 
         addpage = OptAdd(self.driver)
         # 输入客户名称
@@ -400,31 +417,37 @@ class OptAddErrInTime(unittest.TestCase):
 
 class OptAddErrInTimeNull(unittest.TestCase):
     """字段规则空值校验-失焦后立即校验"""
+
     @classmethod
     def setUpClass(cls):
         browser = BrowserEngine(cls)
         cls.driver = browser.open_browser(cls)
         cls.driver.implicitly_wait(10)
         try:
-            cls.driver.find_element_by_xpath('//*[@id="app"]/div/div[3]/div/div[1]/form/div[1]/input').clear()
-            cls.driver.find_element_by_xpath('//*[@id="app"]/div/div[3]/div/div[1]/form/div[1]/input').send_keys(
-                "18811133441")
-            cls.driver.find_element_by_xpath('//*[@id="app"]/div/div[3]/div/div[1]/form/div[2]/input').clear()
-            cls.driver.find_element_by_xpath('//*[@id="app"]/div/div[3]/div/div[1]/form/div[2]/input').send_keys(
-                "1234qwer")
-            cls.driver.find_element_by_xpath('//*[@id="app"]/div/div[3]/div/div[1]/form/div[4]').click()
-            cls.driver.find_element_by_xpath('//*[@id="app"]/header/div/div[1]/div[2]/ul/li[2]/a').click()
-            cls.driver.find_element_by_xpath('//*[@id="app"]/div[1]/div[1]/div/div/ul/li[3]/a').click()
-            cls.driver.find_element_by_xpath('//*[@id="app"]/div[1]/div[2]/div/div[1]/div[2]/a/button').click()
-            logger4.info("初始化完成！")
+            # SPN登录
+            loginpage = LoginPage(cls.driver)
+            loginpage.type_username('18811133441')
+            loginpage.type_pwd('1234qwer')
+            loginpage.click_but('登录')
+
+            # 进入添加lead的页面
+            dashpage = DashBoardPage(cls.driver)
+            # dashpage.sleep(1)
+            dashpage.close_tip_last_login()
+            dashpage.click('xpath=>//*[@id="app"]/div[1]/div[1]/div[2]/div[1]/div/ul/div[2]/li/div', 'SPN')
+            dashpage.sleep(0.5)
+            dashpage.click('xpath=>//*[@id="app"]/div[1]/div[1]/div[2]/div[1]/div/ul/div[2]/li/ul/li[3]/a/span[2]', '线索管理')
+            dashpage.click('xpath=>//*[@id="app"]/div[1]/div[2]/div[2]/div[1]/div/div/div/div/div/div[1]/div[2]/a/button', '添加线索')
+            logger.info("初始化完成！")
         except Exception as e:
-            logger4.error("初始化失败！err：%s" % e)
+            logger.error("初始化失败！err：%s" % e)
             print("初始化失败！err：%s" % e)
             raise AssertionError
 
     @classmethod
     def tearDownClass(cls):
-        cls.driver.quit()
+        addpage = OptAdd(cls.driver)
+        addpage.quit_browser()
 
     def test_4_opt_add_err_null_intime(self):
         """输入框空值校验-失焦后立即校验"""
@@ -437,7 +460,8 @@ class OptAddErrInTimeNull(unittest.TestCase):
         addpage.pres_tab(field_path_data[0]["field_path"])
         addpage.sleep(1)
         try:
-            self.assertEqual(field_assert_path_data[0]["assert_content"], addpage.find_element(field_assert_path_data[0]["assert_path"]).text)
+            self.assertEqual(field_assert_path_data[0]["assert_content"],
+                             addpage.find_element(field_assert_path_data[0]["assert_path"]).text)
             logger4.info("%s不能为空， 断言成功！" % (field_assert_path_data[0]["field_name"]))
         except (AssertionError, AttributeError) as e:
             logger4.error("%s不能为空，断言失败！err：%s" % (field_assert_path_data[0]["field_name"], e))
@@ -449,7 +473,8 @@ class OptAddErrInTimeNull(unittest.TestCase):
         addpage.pres_tab(field_path_data[7]["field_path"])
         addpage.sleep(1)
         try:
-            self.assertEqual(field_assert_path_data[4]["assert_content"], addpage.find_element(field_assert_path_data[4]["assert_path"]).text)
+            self.assertEqual(field_assert_path_data[4]["assert_content"],
+                             addpage.find_element(field_assert_path_data[4]["assert_path"]).text)
             logger4.info("%s不能为空， 断言成功！" % (field_assert_path_data[4]["field_name"]))
         except (AssertionError, AttributeError) as e:
             logger4.error("%s不能为空，断言失败！err：%s" % (field_assert_path_data[4]["field_name"], e))
@@ -461,7 +486,8 @@ class OptAddErrInTimeNull(unittest.TestCase):
         addpage.pres_tab(field_path_data[8]["field_path"])
         addpage.sleep(1)
         try:
-            self.assertEqual(field_assert_path_data[5]["assert_content"], addpage.find_element(field_assert_path_data[5]["assert_path"]).text)
+            self.assertEqual(field_assert_path_data[5]["assert_content"],
+                             addpage.find_element(field_assert_path_data[5]["assert_path"]).text)
             logger4.info("%s不能为空， 断言成功！" % (field_assert_path_data[5]["field_name"]))
         except (AssertionError, AttributeError) as e:
             logger4.error("%s不能为空，断言失败！err：%s" % (field_assert_path_data[5]["field_name"], e))
@@ -473,7 +499,8 @@ class OptAddErrInTimeNull(unittest.TestCase):
         addpage.pres_tab(field_path_data[10]["field_path"])
         addpage.sleep(1)
         try:
-            self.assertEqual(field_assert_path_data[6]["assert_content"], addpage.find_element(field_assert_path_data[6]["assert_path"]).text)
+            self.assertEqual(field_assert_path_data[6]["assert_content"],
+                             addpage.find_element(field_assert_path_data[6]["assert_path"]).text)
             logger4.info("%s不能为空， 断言成功！" % (field_assert_path_data[6]["field_name"]))
         except (AssertionError, AttributeError) as e:
             logger4.error("%s不能为空，断言失败！err：%s" % (field_assert_path_data[6]["field_name"], e))
@@ -485,7 +512,8 @@ class OptAddErrInTimeNull(unittest.TestCase):
         addpage.pres_tab(field_path_data[11]["field_path"])
         addpage.sleep(1)
         try:
-            self.assertEqual(field_assert_path_data[7]["assert_content"], addpage.find_element(field_assert_path_data[7]["assert_path"]).text)
+            self.assertEqual(field_assert_path_data[7]["assert_content"],
+                             addpage.find_element(field_assert_path_data[7]["assert_path"]).text)
             logger4.info("%s不能为空， 断言成功！" % (field_assert_path_data[7]["field_name"]))
         except (AssertionError, AttributeError) as e:
             logger4.error("%s不能为空，断言失败！err：%s" % (field_assert_path_data[7]["field_name"], e))

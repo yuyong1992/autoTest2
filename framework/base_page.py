@@ -56,7 +56,7 @@ class BasePage(object):
         在这里我们把file_path这个参数写死，直接保存到我们项目根目录的一个文件夹.\Screenshots下
         """
         file_path = os.path.dirname(
-            os.path.abspath('.')) + '/result/screenshots/'
+            os.path.abspath('./..')) + '/result/screenshots/'
         rq = time.strftime('%Y%m%d%H%M', time.localtime(time.time()))
         screen_name = file_path + rq + '.png'
         try:
@@ -108,9 +108,7 @@ class BasePage(object):
         elif selector_by == "x" or selector_by == 'xpath':
             try:
                 element = self.driver.find_element_by_xpath(selector_value)
-                logger.info("Had find the element successful "
-                            "by %s via value: %s " %
-                            (selector_by, selector_value))
+                logger.info("Had find the element successful by %s via value: %s " % (selector_by, selector_value))
             except NoSuchElementException as e:
                 logger.error("NoSuchElementException: %s" % repr(e))
                 self.get_windows_img()
@@ -162,8 +160,7 @@ class BasePage(object):
         except Exception as e:
             logger.error("Failed to click the element with %s" % e)
 
-            # 获取网页标题
-
+    # 获取网页标题
     def get_page_title(self):
         logger.info("Current page title is %s" % self.driver.title)
         return self.driver.title
