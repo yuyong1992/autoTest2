@@ -31,13 +31,22 @@ class BrowserEngine(object):
         logger.info("The test server url is: %s" % url)
 
         if browser == "Firefox":
-            driver = webdriver.Firefox()
+            # 设置无头浏览器，运行脚本不显示浏览器界面，减少脚本运行时间
+            firefox_opt = webdriver.FirefoxOptions()
+            firefox_opt.add_argument("--headless")
+            driver = webdriver.Firefox(firefox_options=firefox_opt)
             logger.info("Starting firefox browser.")
         elif browser == "Chrome":
-            driver = webdriver.Chrome(self.chrome_driver_path)
+            # 设置无头浏览器，运行脚本不显示浏览器界面，减少脚本运行时间
+            chrome_opt = webdriver.ChromeOptions()
+            chrome_opt.add_argument("--headless")
+            driver = webdriver.Chrome(self.chrome_driver_path, chrome_options=chrome_opt)
             logger.info("Starting Chrome browser.")
         elif browser == "IE":
-            driver = webdriver.Ie(self.ie_driver_path)
+            # 设置无头浏览器，运行脚本不显示浏览器界面，减少脚本运行时间
+            ie_opt = webdriver.IeOptions()
+            ie_opt.add_argument("--headless")
+            driver = webdriver.Ie(self.ie_driver_path, ie_options=ie_opt)
             logger.info("Starting IE browser.")
 
         driver.maximize_window()
