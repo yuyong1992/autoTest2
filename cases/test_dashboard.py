@@ -42,24 +42,22 @@ class LinkSkip(unittest.TestCase):
             change_pwd_tip = dashpage.get_tip_change_pwd()
             logger.info(change_pwd_tip.text)
             self.assertIn('您的密码', change_pwd_tip.text)
-            logger.info('检测到修改密码的提示框！')
             print('检测到修改密码的提示框！')
         except Exception as e:
-            logger.error('未检测到修改密码的提示框！err：% s' % e)
             print('未检测到修改密码的提示框！err：% s' % e)
 
-        def tes_2_close_tip_last_login(self):
-            dashpage = DashBoardPage(self.driver)
-            try:
-                dashpage.close_tip_last_login()
-                self.assertFalse(self, dashpage.get_tip_last_login())
-                logger.info('上次登录提示关闭成功！')
-                print('上次登录提示关闭成功！')
-            except AssertionError as e:
-                logger.error('上次登录提示关闭失败！')
-                print('上次登录提示关闭失败！')
+    def test_2_close_tip_last_login(self):
+        dashpage = DashBoardPage(self.driver)
+        try:
+            dashpage.close_tip_last_login()
+            self.assertFalse(self, dashpage.get_tip_last_login())
+            logger.info('上次登录提示关闭成功！')
+            print('上次登录提示关闭成功！')
+        except AssertionError as e:
+            logger.error('上次登录提示关闭失败！')
+            print('上次登录提示关闭失败！')
 
-    def tes_3_close_tip_change_pwd(self):
+    def test_3_close_tip_change_pwd(self):
         dashpage = DashBoardPage(self.driver)
         try:
             dashpage.close_tip_change_pwd()

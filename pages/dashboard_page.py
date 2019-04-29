@@ -8,7 +8,7 @@ logger = Logger("DashBoardPage").getlog()
 
 class DashBoardPage(BasePage):
     path_tip_last_login = 'xpath=>/html/body/div[3]/div/div[1]/p'
-    path_tip_change_pwd = 'xpath=>/html/body/div[4]/div/div[1]/a'
+    path_tip_change_pwd = 'xpath=>/html/body/div[4]/div/div[1]/p'
 
     def confirm_dashboard_page(self):
         """确认进入Dashboard页"""
