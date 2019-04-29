@@ -309,8 +309,10 @@ class OptAddErrInTime(unittest.TestCase):
             dashpage.close_tip_last_login()
             dashpage.click('xpath=>//*[@id="app"]/div[1]/div[1]/div[2]/div[1]/div/ul/div[2]/li/div', 'SPN')
             dashpage.sleep(0.5)
-            dashpage.click('xpath=>//*[@id="app"]/div[1]/div[1]/div[2]/div[1]/div/ul/div[2]/li/ul/li[3]/a/span[2]', '线索管理')
-            dashpage.click('xpath=>//*[@id="app"]/div[1]/div[2]/div[2]/div[1]/div/div/div/div/div/div[1]/div[2]/a/button', '添加线索')
+            dashpage.click('xpath=>'
+                           '//*[@id="app"]/div[1]/div[1]/div[2]/div[1]/div/ul/div[2]/li/ul/li[3]/a/span[2]', '线索管理')
+            dashpage.click(
+                'xpath=>//*[@id="app"]/div[1]/div[2]/div[2]/div[1]/div/div/div/div/div/div[1]/div[2]/a/button', '添加线索')
             logger.info("初始化完成！")
         except Exception as e:
             logger.error("初始化失败！err：%s" % e)

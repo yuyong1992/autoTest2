@@ -6,8 +6,8 @@ import time
 import os
 # from autoTest2.cases.test_login import Login
 # from autoTest2.cases.test_login import LoginErr, LoginSuccess, LinkClick
-# from cases.test_opt_add import OptAddSuccess, OptAddErrSub, OptAddErrInTime, OptAddErrInTimeNull
-from cases.test_dashboard import CloseTipOfLastLogin
+# from cases.test_lead_add import OptAddSuccess, OptAddErrSub, OptAddErrInTime, OptAddErrInTimeNull
+from cases.test_dashboard import LinkSkip
 
 # 以下是几种将测试用例添加到测试套件中的方法
 
@@ -17,7 +17,7 @@ suit = unittest.TestSuite()
 # suit.addTest(unittest.makeSuite(OptAddErrSub))
 # suit.addTest(unittest.makeSuite(OptAddErrInTime))
 # suit.addTest(unittest.makeSuite(OptAddErrInTimeNull))
-suit.addTest(unittest.makeSuite(CloseTipOfLastLogin))
+suit.addTest(unittest.makeSuite(LinkSkip))
 
 # suit.addTest(unittest.makeSuite(LeadEditSuccess))
 
