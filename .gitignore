@@ -1,0 +1,10 @@
+# log files
+/logs/
+
+# test result files
+/result/report/
+/result/screenshots/
+
+# editor directories and files
+/.idea
+/.vscode

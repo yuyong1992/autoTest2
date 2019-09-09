@@ -50,12 +50,12 @@ class LinkSkip(unittest.TestCase):
         dashpage = DashBoardPage(self.driver)
         try:
             dashpage.close_tip_last_login()
-            self.assertFalse(self, dashpage.get_tip_last_login())
+            self.assertTrue(self, dashpage.get_tip_last_login().text)
             logger.info('上次登录提示关闭成功！')
             print('上次登录提示关闭成功！')
         except AssertionError as e:
-            logger.error('上次登录提示关闭失败！')
-            print('上次登录提示关闭失败！')
+            logger.error('上次登录提示关闭失败！err: % s' % e)
+            print('上次登录提示关闭失败！err: % s' % e)
 
     def test_3_close_tip_change_pwd(self):
         dashpage = DashBoardPage(self.driver)
@@ -65,5 +65,5 @@ class LinkSkip(unittest.TestCase):
             logger.info('修改密码提示关闭成功！')
             print('修改密码提示关闭成功！')
         except AssertionError as e:
-            logger.error('修改密码提示关闭失败！')
-            print('修改密码提示关闭失败！')
+            logger.error('修改密码提示关闭失败！err: % s' % e)
+            print('修改密码提示关闭失败！err: % s' % e)
