@@ -1,4 +1,4 @@
-# coding:utf-8
+# -*- coding:utf-8 -*-
 
 from framework.base_page import BasePage
 from framework.logger import Logger

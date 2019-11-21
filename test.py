@@ -1,12 +1,6 @@
 # coding:utf-8
 
-
-class Test:
-    def prt(self):
-        print(self)
-        print(self)
-
-
-t = Test()
-# T.prt()
-Test.prt(t)
+for i in range(1, 10):
+    for j in range(1, i+1):
+        print('%s*%s=%s' %(i, j, i*j), end=' ')
+    print('\n')

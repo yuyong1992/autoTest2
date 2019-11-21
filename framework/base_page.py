@@ -5,7 +5,6 @@ from selenium.webdriver.common.keys import Keys
 import os.path
 from .logger import Logger
 
-# create a logger instance
 logger = Logger(logger="BasePage").getlog()
 
 
@@ -17,31 +16,26 @@ class BasePage(object):
     def __init__(self, driver):
         self.driver = driver
 
-        # quit browser and end testing
-
+    # 浏览器退出
     def quit_browser(self):
         self.driver.quit()
 
-        # 浏览器前进操作
-
+    # 浏览器前进
     def forward(self):
         self.driver.forward()
         logger.info("Click forward on current page.")
 
-        # 浏览器后退操作
-
+    # 浏览器后退
     def back(self):
         self.driver.back()
         logger.info("Click back on current page.")
 
-        # 隐式等待
-
+    # 隐式等待
     def wait(self, seconds):
         self.driver.implicitly_wait(seconds)
         logger.info("wait for %d seconds." % seconds)
 
-        # 点击关闭当前窗口
-
+    # 关闭当前浏览器窗口
     def close(self):
         try:
             self.driver.close()
@@ -49,8 +43,7 @@ class BasePage(object):
         except NameError as e:
             logger.error("Failed to quit the browser with %s" % e)
 
-            # 保存图片
-
+    # 屏幕截图
     def get_windows_img(self):
         """
         在这里我们把file_path这个参数写死，直接保存到我们项目根目录的一个文件夹.\Screenshots下
@@ -68,8 +61,7 @@ class BasePage(object):
             logger.error("Failed to take screenshot! %s" % e)
             self.get_windows_img()
 
-            # 定位元素方法
-
+    # 元素定位方法
     def find_element(self, selector):
         """
          这个地方为什么是根据=>来切割字符串，请看页面里定位元素的方法
@@ -119,8 +111,7 @@ class BasePage(object):
 
         return element
 
-        # 输入
-
+    # 输入框输入文本
     def type(self, selector, text, input_name="inputBox"):
 
         el = self.find_element(selector)
@@ -135,8 +126,7 @@ class BasePage(object):
         except Exception as e:
             logger.error("Failed to type in input box with %s" % repr(e))
 
-            # 清除文本框
-
+    # 清除输入框文本
     def clear(self, selector):
 
         el = self.find_element(selector)
@@ -147,8 +137,7 @@ class BasePage(object):
             logger.error("Failed to clear in input box with %s" % e)
             self.get_windows_img()
 
-            # 点击元素
-
+    # 点击按钮
     def click(self, selector, but_name="按钮"):
 
         el = self.find_element(selector)
@@ -170,6 +159,7 @@ class BasePage(object):
         time.sleep(seconds)
         logger.info("Sleep for %d seconds" % seconds)
 
+    # 点击tab键
     def pres_tab(self, selector):
         el = self.find_element(selector)
         try:
