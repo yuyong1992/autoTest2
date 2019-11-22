@@ -40,7 +40,7 @@ field_path_data = field_path_exl.excel_to_dic()
 class OptAddSuccess(unittest.TestCase):
     def setUp(self):
         browser = BrowserEngine(self)
-        self.driver = browser.open_browser(self)
+        self.driver = browser.open_browser(self, test_server='inServer')
         self.driver.implicitly_wait(10)
         try:
             # SPN登录
@@ -165,7 +165,7 @@ class OptAddSuccess(unittest.TestCase):
 class OptAddErrSub(unittest.TestCase):
     def setUp(self):
         browser = BrowserEngine(self)
-        self.driver = browser.open_browser(self)
+        self.driver = browser.open_browser(self, test_server='inServer')
         self.driver.implicitly_wait(10)
         try:
             # SPN登录
@@ -294,7 +294,7 @@ class OptAddErrInTime(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         browser = BrowserEngine(cls)
-        cls.driver = browser.open_browser(cls)
+        cls.driver = browser.open_browser(cls, test_server='inServer')
         cls.driver.implicitly_wait(10)
         try:
             # SPN登录
@@ -423,7 +423,7 @@ class OptAddErrInTimeNull(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         browser = BrowserEngine(cls)
-        cls.driver = browser.open_browser(cls)
+        cls.driver = browser.open_browser(cls, test_server='inServer')
         cls.driver.implicitly_wait(10)
         try:
             # SPN登录

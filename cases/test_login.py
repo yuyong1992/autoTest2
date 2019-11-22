@@ -39,7 +39,7 @@ class LoginSuccess(unittest.TestCase):
 
     def setUp(self):
         browser = BrowserEngine(self)
-        self.driver = browser.open_browser(self)
+        self.driver = browser.open_browser(self, test_server='inServer')
 
     def tearDown(self):
         self.driver.quit()
@@ -73,7 +73,7 @@ class LoginErr(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         browser = BrowserEngine(cls)
-        cls.driver = browser.open_browser(cls)
+        cls.driver = browser.open_browser(cls, test_server='inServer')
 
     @classmethod
     def tearDownClass(cls):
@@ -108,7 +108,7 @@ class LinkClick(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         browser = BrowserEngine(cls)
-        cls.driver = browser.open_browser(cls)
+        cls.driver = browser.open_browser(cls, test_server='inServer')
 
     @classmethod
     def tearDownClass(cls):

@@ -14,7 +14,7 @@ class LinkSkip(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         browser = BrowserEngine(cls)
-        cls.driver = browser.open_browser(cls)
+        cls.driver = browser.open_browser(cls, test_server='inServer')
         cls.driver.implicitly_wait(10)
         loginpage = LoginPage(cls.driver)
         loginpage.type_username('18811133471')
