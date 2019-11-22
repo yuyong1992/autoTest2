@@ -18,7 +18,7 @@ class BrowserEngine(object):
 
         # read the browser type from config.ini file, return the driver
 
-    def open_browser(self, driver):
+    def open_browser(self, driver, test_server):
         config = ConfigParser()
         file_path = os.path.dirname(
             os.path.abspath('.')) + '/autoTest2/config/config.ini'
@@ -27,7 +27,7 @@ class BrowserEngine(object):
 
         browser = config.get("browserType", "browserName")
         logger.info("You had select %s browser." % browser)
-        url = config.get("testServer", "URL")
+        url = config.get(test_server, "URL")
         logger.info("The test server url is: %s" % url)
 
         if browser == "Firefox":
