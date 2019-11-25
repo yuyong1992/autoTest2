@@ -11,7 +11,7 @@ logger1 = Logger("LoginSuccess").getlog()
 logger2 = Logger("LoginErrPhone").getlog()
 logger3 = Logger("LinkClick").getlog()
 # 测试数据文件
-file_path = "E:\Desktop\\testdata.xlsx"
+file_path = "E:\Desktop\\testdata_login.xlsx"
 
 # 获取正确的手机号、密码数据
 file_sheetname = "correct"
@@ -54,7 +54,7 @@ class LoginSuccess(unittest.TestCase):
         loginpage.wait(2)
         loginpage.type_username(data["username"])
         loginpage.type_pwd(data["pwd"])
-        loginpage.click_but()
+        loginpage.click_but(but_name="登录")
         loginpage.wait(10)
         try:
             self.assertIn(loginpage.get_page_title(), data["assert"])
