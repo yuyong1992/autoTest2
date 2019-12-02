@@ -7,9 +7,13 @@ logger = Logger("DashBoardPage").getlog()
 
 
 class DashBoardPage(BasePage):
+    # 上次登录的提示
     path_tip_last_login = 'xpath=>/html/body/div[3]/div/div[1]/p'
+    # 修改密码的提示
     path_tip_change_pwd = 'xpath=>/html/body/div[4]/div/div[1]/p'
+    # 关闭上次登录的提示
     tip_last_login_close = 'xoath=>/html/body/div[3]/div/div[3]'
+    # 关闭上次修改密码的提示
     tip_change_pwd_close = 'xpath=>/html/body/div[4]/div/div[1]'
 
     def confirm_dashboard_page(self):
