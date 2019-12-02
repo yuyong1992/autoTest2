@@ -19,7 +19,7 @@ class LinkSkip(unittest.TestCase):
         loginpage = LoginPage(cls.driver)
         loginpage.type_username('18811133471')
         loginpage.type_pwd('1234qwer')
-        loginpage.click_but('登录')
+        loginpage.click_login()
         loginpage.sleep(0.5)
 
     @classmethod

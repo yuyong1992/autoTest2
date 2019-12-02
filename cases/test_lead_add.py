@@ -47,7 +47,7 @@ class OptAddSuccess(unittest.TestCase):
             loginpage = LoginPage(cls.driver)
             loginpage.type_username('18811133441')
             loginpage.type_pwd('1234qwer')
-            loginpage.click_but('登录')
+            loginpage.click_login()
 
             # 进入添加lead的页面
             dashpage = DashBoardPage(cls.driver)
@@ -172,7 +172,7 @@ class OptAddErrSub(unittest.TestCase):
             loginpage = LoginPage(cls.driver)
             loginpage.type_username('18811133441')
             loginpage.type_pwd('1234qwer')
-            loginpage.click_but('登录')
+            loginpage.click_login()
 
             # 进入添加lead的页面
             dashpage = DashBoardPage(cls.driver)
@@ -301,7 +301,7 @@ class OptAddErrInTime(unittest.TestCase):
             loginpage = LoginPage(cls.driver)
             loginpage.type_username('18811133441')
             loginpage.type_pwd('1234qwer')
-            loginpage.click_but('登录')
+            loginpage.click_login()
 
             # 进入添加lead的页面
             dashpage = DashBoardPage(cls.driver)
@@ -430,7 +430,7 @@ class OptAddErrInTimeNull(unittest.TestCase):
             loginpage = LoginPage(cls.driver)
             loginpage.type_username('18811133441')
             loginpage.type_pwd('1234qwer')
-            loginpage.click_but('登录')
+            loginpage.click_login()
 
             # 进入添加lead的页面
             dashpage = DashBoardPage(cls.driver)
