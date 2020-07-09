@@ -1,23 +1,27 @@
 # coding:utf-8
 
-import HTMLTestReportCN
+from framework import HTMLTestReportCN
 import unittest
 import time
 import os
-# from autoTest2.cases.test_login import Login
+from cases.test_login import LoginErr, LoginSuccess, LinkClick
 # from autoTest2.cases.test_login import LoginErr, LoginSuccess, LinkClick
 # from cases.test_lead_add import OptAddSuccess, OptAddErrSub, OptAddErrInTime, OptAddErrInTimeNull
-from cases.test_dashboard import LinkSkip
+# from cases.test_dashboard import LinkSkip
 
 # 以下是几种将测试用例添加到测试套件中的方法
 
 # 添加测试用例，方法一：通过测试类查找测试用例
 suit = unittest.TestSuite()
+
+suit.addTest(unittest.makeSuite(LoginSuccess))
+suit.addTest(unittest.makeSuite(LoginErr))
+suit.addTest(unittest.makeSuite(LinkClick))
 # suit.addTest(unittest.makeSuite(OptAddSuccess))
 # suit.addTest(unittest.makeSuite(OptAddErrSub))
 # suit.addTest(unittest.makeSuite(OptAddErrInTime))
 # suit.addTest(unittest.makeSuite(OptAddErrInTimeNull))
-suit.addTest(unittest.makeSuite(LinkSkip))
+# suit.addTest(unittest.makeSuite(LinkSkip))
 
 # suit.addTest(unittest.makeSuite(LeadEditSuccess))
 
@@ -25,7 +29,7 @@ suit.addTest(unittest.makeSuite(LinkSkip))
 # suit = unittest.TestLoader().loadTestsFromTestCase(LoginErrPhone)
 
 '''
-# 添加测试用例，方法三：通过测试用例文件*py查找
+# 添加测试用例，方法三：通过测试用例文件*.py查找
 path_case = os.path.join(os.getcwd(), 'cases')
 suit = unittest.TestLoader().discover(path_case, pattern="test*.py", top_level_dir=None)
 '''

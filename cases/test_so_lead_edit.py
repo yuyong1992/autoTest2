@@ -39,7 +39,7 @@ field_path_data = field_path_exl.excel_to_dic()
 class LeadEditSuccess(unittest.TestCase):
     def setUp(self):
         browser = BrowserEngine(self)
-        self.driver = browser.open_browser(self)
+        self.driver = browser.open_browser(self, test_server='inServer')
         self.driver.implicitly_wait(10)
         try:
             # 登录
@@ -165,7 +165,7 @@ class LeadEditSuccess(unittest.TestCase):
 class LeadEditErrSub(unittest.TestCase):
     def setUp(self):
         browser = BrowserEngine(self)
-        self.driver = browser.open_browser(self)
+        self.driver = browser.open_browser(self, test_server='inServer')
         self.driver.implicitly_wait(10)
         try:
             self.driver.find_element_by_xpath('//*[@id="app"]/div/div[3]/div/div[1]/form/div[1]/input').clear()
@@ -287,7 +287,7 @@ class LeadEditErrInTime(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         browser = BrowserEngine(cls)
-        cls.driver = browser.open_browser(cls)
+        cls.driver = browser.open_browser(cls, test_server='inServer')
         cls.driver.implicitly_wait(10)
         try:
             cls.driver.find_element_by_xpath('//*[@id="app"]/div/div[3]/div/div[1]/form/div[1]/input').clear()
@@ -409,7 +409,7 @@ class LeadEditErrInTimeNull(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         browser = BrowserEngine(cls)
-        cls.driver = browser.open_browser(cls)
+        cls.driver = browser.open_browser(cls, test_server='inServer')
         cls.driver.implicitly_wait(10)
         try:
             cls.driver.find_element_by_xpath('//*[@id="app"]/div/div[3]/div/div[1]/form/div[1]/input').clear()

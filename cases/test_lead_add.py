@@ -40,14 +40,14 @@ field_path_data = field_path_exl.excel_to_dic()
 class OptAddSuccess(unittest.TestCase):
     def setUp(self):
         browser = BrowserEngine(self)
-        self.driver = browser.open_browser(self)
+        self.driver = browser.open_browser(self, test_server='inServer')
         self.driver.implicitly_wait(10)
         try:
             # SPN登录
             loginpage = LoginPage(cls.driver)
             loginpage.type_username('18811133441')
             loginpage.type_pwd('1234qwer')
-            loginpage.click_but('登录')
+            loginpage.click_login()
 
             # 进入添加lead的页面
             dashpage = DashBoardPage(cls.driver)
@@ -165,14 +165,14 @@ class OptAddSuccess(unittest.TestCase):
 class OptAddErrSub(unittest.TestCase):
     def setUp(self):
         browser = BrowserEngine(self)
-        self.driver = browser.open_browser(self)
+        self.driver = browser.open_browser(self, test_server='inServer')
         self.driver.implicitly_wait(10)
         try:
             # SPN登录
             loginpage = LoginPage(cls.driver)
             loginpage.type_username('18811133441')
             loginpage.type_pwd('1234qwer')
-            loginpage.click_but('登录')
+            loginpage.click_login()
 
             # 进入添加lead的页面
             dashpage = DashBoardPage(cls.driver)
@@ -294,14 +294,14 @@ class OptAddErrInTime(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         browser = BrowserEngine(cls)
-        cls.driver = browser.open_browser(cls)
+        cls.driver = browser.open_browser(cls, test_server='inServer')
         cls.driver.implicitly_wait(10)
         try:
             # SPN登录
             loginpage = LoginPage(cls.driver)
             loginpage.type_username('18811133441')
             loginpage.type_pwd('1234qwer')
-            loginpage.click_but('登录')
+            loginpage.click_login()
 
             # 进入添加lead的页面
             dashpage = DashBoardPage(cls.driver)
@@ -423,14 +423,14 @@ class OptAddErrInTimeNull(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         browser = BrowserEngine(cls)
-        cls.driver = browser.open_browser(cls)
+        cls.driver = browser.open_browser(cls, test_server='inServer')
         cls.driver.implicitly_wait(10)
         try:
             # SPN登录
             loginpage = LoginPage(cls.driver)
             loginpage.type_username('18811133441')
             loginpage.type_pwd('1234qwer')
-            loginpage.click_but('登录')
+            loginpage.click_login()
 
             # 进入添加lead的页面
             dashpage = DashBoardPage(cls.driver)

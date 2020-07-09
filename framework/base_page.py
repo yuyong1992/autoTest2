@@ -16,52 +16,52 @@ class BasePage(object):
     def __init__(self, driver):
         self.driver = driver
 
-    # 浏览器退出
+
+    # 退出浏览器结束测试
     def quit_browser(self):
         self.driver.quit()
 
-    # 浏览器前进
+    # 浏览器前进操作
     def forward(self):
         self.driver.forward()
-        logger.info("Click forward on current page.")
+        logger.info("点击浏览器前进按钮")
 
-    # 浏览器后退
+    # 浏览器后退操作
     def back(self):
         self.driver.back()
-        logger.info("Click back on current page.")
+        logger.info("点击浏览器退回按钮")
 
     # 隐式等待
     def wait(self, seconds):
         self.driver.implicitly_wait(seconds)
-        logger.info("wait for %d seconds." % seconds)
+        logger.info("等待 %d 秒钟." % seconds)
 
-    # 关闭当前浏览器窗口
+    # 点击关闭当前窗口
     def close(self):
         try:
             self.driver.close()
-            logger.info("Closing and quit the browser.")
+            logger.info("关闭并退出浏览器")
         except NameError as e:
-            logger.error("Failed to quit the browser with %s" % e)
+            logger.error("退出浏览器失败： %s" % e)
 
-    # 屏幕截图
+    # 保存图片
     def get_windows_img(self):
         """
         在这里我们把file_path这个参数写死，直接保存到我们项目根目录的一个文件夹.\Screenshots下
         """
-        file_path = os.path.dirname(
-            os.path.abspath('.')) + 'autoTest2/result/screenshots/'
+        file_path = os.path.dirname(os.path.abspath('.')) + '/autoTest2/result/screenshots/'
+        # logger.info('%s ;%s ' % (file_path, os.path.dirname(os.path.abspath('.'))))
         rq = time.strftime('%Y%m%d%H%M', time.localtime(time.time()))
         screen_name = file_path + rq + '.png'
         try:
             self.driver.get_screenshot_as_file(screen_name)
             # self.driver.save_screenshot(screen_name)
-            logger.info(
-                "Had take screenshot and save to folder : /result/screenshots")
+            logger.info("保存页面截图\'%s\' \n!!!!!!!!!!!!!!!!" % screen_name)
         except NameError as e:
-            logger.error("Failed to take screenshot! %s" % e)
+            logger.error("页面截图失败! %s\n!!!!!!!!!!!!!!!!" % e)
             self.get_windows_img()
 
-    # 元素定位方法
+    # 定位元素方法
     def find_element(self, selector):
         """
          这个地方为什么是根据=>来切割字符串，请看页面里定位元素的方法
@@ -80,12 +80,11 @@ class BasePage(object):
         if selector_by == "i" or selector_by == 'id':
             try:
                 element = self.driver.find_element_by_id(selector_value)
-                logger.info("Had find the element successful "
-                            "by %s via value: %s " %
-                            (selector_by, selector_value))
+                logger.info("通过 %s 定位元素成功，元素位置: %s " % (selector_by, selector_value))
             except NoSuchElementException as e:
-                logger.error("NoSuchElementException: %s" % e)
-                self.get_windows_img()  # take screenshot
+                logger.error("没有找到元素，元素地址: %s 。err：% s" % (selector_value, e))
+                # 截图
+                self.get_windows_img()
         elif selector_by == "n" or selector_by == 'name':
             element = self.driver.find_element_by_name(selector_value)
         elif selector_by == "c" or selector_by == 'class_name':
@@ -93,77 +92,72 @@ class BasePage(object):
         elif selector_by == "l" or selector_by == 'link_text':
             element = self.driver.find_element_by_link_text(selector_value)
         elif selector_by == "p" or selector_by == 'partial_link_text':
-            element = self.driver.find_element_by_partial_link_text(
-                selector_value)
+            element = self.driver.find_element_by_partial_link_text(selector_value)
         elif selector_by == "t" or selector_by == 'tag_name':
             element = self.driver.find_element_by_tag_name(selector_value)
         elif selector_by == "x" or selector_by == 'xpath':
             try:
                 element = self.driver.find_element_by_xpath(selector_value)
-                logger.info("Had find the element successful by %s via value: %s " % (selector_by, selector_value))
+                logger.info("通过 %s 定位元素成功，元素位置: %s " % (selector_by, selector_value))
             except NoSuchElementException as e:
-                logger.error("NoSuchElementException: %s" % repr(e))
+                logger.error("没有找到元素，元素地址: %s 。err：% s" % (selector_value, repr(e)))
                 self.get_windows_img()
         elif selector_by == "s" or selector_by == 'selector_selector':
             element = self.driver.find_element_by_css_selector(selector_value)
         else:
-            raise NameError("Please enter a valid type of targeting elements.")
+            raise NameError("请输入正确的定位方式！")
 
         return element
 
     # 输入框输入文本
     def type(self, selector, text, input_name="inputBox"):
-
         el = self.find_element(selector)
         try:
             el.clear()
             el.send_keys(text)
-            logger.info("Had type \' %s \' in inputBox \' %s \'" %
-                        (text, input_name))
+            logger.info("在输入框 \' %s \' 中输入 \' %s \'" % (input_name, text))
         except NameError as e:
-            logger.error("Failed to type in input box with %s" % e)
+            logger.error("操作失败，在输入框 \' %s \' 中输入 \' %s \'。err：%s" % (input_name, text, e))
             self.get_windows_img()
         except Exception as e:
-            logger.error("Failed to type in input box with %s" % repr(e))
+            logger.error("操作失败，在输入框 \' %s \' 中输入 \' %s \'。err：%s" % (input_name, text, repr(e)))
 
-    # 清除输入框文本
+    # 清除文本框
     def clear(self, selector):
-
         el = self.find_element(selector)
         try:
             el.clear()
-            logger.info("Clear text in input box before typing.")
+            logger.info("清空输入框")
         except NameError as e:
-            logger.error("Failed to clear in input box with %s" % e)
+            logger.error("操作失败，清空输入框失败。err： %s" % e)
             self.get_windows_img()
 
     # 点击按钮
     def click(self, selector, but_name="按钮"):
-
         el = self.find_element(selector)
         try:
             el.click()
-            logger.info("The element \' %s \' was clicked." % but_name)
+            logger.info("已点击 \'%s\'按钮" % but_name)
         except NameError as e:
-            logger.error("Failed to click the element with %s" % e)
+            logger.error("操作失败，点击\'%s\'按钮操作失败： %s" % (but_name, e))
         except Exception as e:
-            logger.error("Failed to click the element with %s" % e)
+            logger.error("操作失败，点击\'%s\'按钮操作失败: %s" % (but_name, e))
 
     # 获取网页标题
     def get_page_title(self):
-        logger.info("Current page title is %s" % self.driver.title)
+        logger.info("当前页面的标题为：\'%s\'" % self.driver.title)
         return self.driver.title
 
     @staticmethod
     def sleep(seconds):
         time.sleep(seconds)
-        logger.info("Sleep for %d seconds" % seconds)
+        logger.info("休眠%s 秒钟。。。" % seconds)
 
     # 点击tab键
     def pres_tab(self, selector):
         el = self.find_element(selector)
         try:
             el.send_keys(Keys.TAB)
-            logger.info("Press the TAB key!")
+            logger.info("点击TAB键")
         except NameError as e:
-            logger.error("Failed to press the TAB key！err: %s" % e)
+            logger.error("操作失败，点击TAB键失败！err: %s" % e)

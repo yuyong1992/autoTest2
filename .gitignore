@@ -1,13 +1,11 @@
 # log files
-/logs/*.log
-!/logs/201905071957.log
+/logs/
 
 # test result files
-/result/report/*.html
-!/result/report/report20190909181217.html
-/result/screenshots/*.png
-!/result/screenshots/201909091812.png
+/result/report/
+/result/screenshots/
+/result/logs/
 
 # editor directories and files
-/.idea/
-/.vscode/
+/.idea
+/.vscode

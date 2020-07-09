@@ -7,8 +7,14 @@ logger = Logger("DashBoardPage").getlog()
 
 
 class DashBoardPage(BasePage):
+    # 上次登录的提示
     path_tip_last_login = 'xpath=>/html/body/div[3]/div/div[1]/p'
+    # 修改密码的提示
     path_tip_change_pwd = 'xpath=>/html/body/div[4]/div/div[1]/p'
+    # 关闭上次登录的提示
+    tip_last_login_close = 'xoath=>/html/body/div[3]/div/div[3]'
+    # 关闭上次修改密码的提示
+    tip_change_pwd_close = 'xpath=>/html/body/div[4]/div/div[1]'
 
     def confirm_dashboard_page(self):
         """确认进入Dashboard页"""
@@ -32,13 +38,13 @@ class DashBoardPage(BasePage):
         """关闭上次登录提示框"""
         self.sleep(0.5)
         # path_tip = 'xpath=>/html/body/div[3]/div/div[2]'
-        self.click(self.path_tip_last_login, '上次登录提示框关闭按钮')
+        self.click(self.tip_last_login_close, '上次登录提示框关闭按钮')
 
     def close_tip_change_pwd(self):
         """"关闭密码3个月未修改的提示框"""
         self.sleep(0.5)
         # path_tip = 'xpath=>/html/body/div[4]/div/div[1]'
-        self.click(self.path_tip_change_pwd, '密码修改提示框关闭按钮')
+        self.click(self.tip_change_pwd_close, '密码修改提示框关闭按钮')
 
     def product_select(self, product):
         """我的产品"""
