@@ -4,6 +4,7 @@
 # test result files
 /result/report/
 /result/screenshots/
+/result/logs/
 
 # editor directories and files
 /.idea
